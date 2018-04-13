@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+
+<html>
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <title>Admin GB</title>
+
+  <meta content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no" name="viewport">
+  {% stylesheets  'bundles/css/bootstrap.min.css' %}
+   <link rel="stylesheet" href="{{ asset_url }}" type="text/css" />
+ {% endstylesheets %}
+ {% stylesheets 'bundles/css/AdminLTE.min.css' %}
+  <link rel="stylesheet" href="{{ asset_url }}" type="text/css" />
+{% endstylesheets %}
+{% stylesheets 'bundles/css/skin-blue.css' %}
+ <link rel="stylesheet" href="{{ asset_url }}" type="text/css" />
+{% endstylesheets %}
+{% stylesheets 'bundles/css/blue.css' %}
+ <link rel="stylesheet" href="{{ asset_url }}" type="text/css" />
+{% endstylesheets %}
+ {% stylesheets filter='cssrewrite' 'bundles/wysihtml/bootstrap3-wysihtml5.min.css' %}
+  <link rel="stylesheet" href="{{ asset_url }}" type="text/css" />
+{% endstylesheets %}
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.5.0/css/font-awesome.min.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/ionicons/2.0.1/css/ionicons.min.css">
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-datetimepicker/4.17.37/css/bootstrap-datetimepicker-standalone.min.css" rel="stylesheet">
+<link href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-datetimepicker/4.17.37/css/bootstrap-datetimepicker.min.css" rel="stylesheet">
+{% javascripts 'bundles/adminjs/jquery-2.2.3.min.js' %}
+ <script type="text/javascript" src="{{ asset_url }}"></script>
+{% endjavascripts %}
+{% javascripts 'bundles/wysihtml/bootstrap3-wysihtml5.all.min.js' %}
+ <script type="text/javascript" src="{{ asset_url }}"></script>
+{% endjavascripts %}
+{% stylesheets filter='cssrewrite' 'bundles/css/jquery.fancybox.min.css' %}
+ <link rel="stylesheet" href="{{ asset_url }}" type="text/css" />
+{% endstylesheets %}
+{% javascripts 'bundles/js/jquery.fancybox.min.js' %}
+  <script type="text/javascript" src="{{ asset_url }}"></script>
+{% endjavascripts %}
+</head>
+<body>
+<h2>Réponse à une demande de renseignements</h2><hr>
+<a href="{{ path('hdv_admin_upload_moreimages', {'id': enquiry.object.id}) }}" data-fancybox class="btn btn-success"><span class="fa fa-lg fa-file-image-o"></span>  Upload d'images</a><br/><br/>
+{# On met l'id de l'annonce dans la route de l'action du formulaire #}
+<form id="form" action="{{ path('hdv_admin_enquiry_answer', {'id': enquiry.id }) }}" method="post">
+  <textarea id="message" name="message" class="form-control" style="height: 300px;">
+
+     Suite à votre demande concernant le lot suivant :<br/><br/>
+     Lot n°<b>{{ enquiry.object.ordre }}{% if enquiry.object.ordrebis is defined %} {{ enquiry.object.ordrebis }}{% endif %}</b> de la vente du {{ enquiry.object.codevac.date|localizeddate('medium', 'none', 'fr') }} - {{ enquiry.object.description|slice(0,180) }}...<br/><br/>
+     Nous vous informons que :<br/>
+     A COMPLETER.<br/>De nouvelles photos sont disponibles sur notre site. Accédez directement à la fiche du lot en cliquant <a href="{{ absolute_url(path('hdv_ventes_object_view', {'id' : enquiry.object.id})) }}">ici</a>.<br/><br/>
+     En vous remerciant par avance de votre compréhension.<br/>
+     Bien cordialement,<br/>
+     SAISIR NOM
+   </textarea><br/>
+    <input type="submit" value="Envoyer" class="btn btn-success" />
+
+
+</form>
+<script>
+$(document).ready(function() {
+    $('#form').on('submit', function(e) {
+        e.preventDefault(); // J'empêche le comportement par défaut du navigateur, c-à-d de soumettre le formulaire
+        var $this = $(this);
+            $.ajax({
+                url: $this.attr('action'),
+                type: $this.attr('method'),
+                data: $this.serialize(),
+                dataType: 'json', // JSON
+                success: function(json) {
+                  parent.location.reload(true);
+                }
+            });
+
+    });
+    $(".btn").click(function(){
+        $(this).button('loading');
+    });
+});
+$('#message').wysihtml5({
+  toolbar: {
+    fa: true
+  }
+});
+$("[data-fancybox]").fancybox({
+  iframe : {
+      preload : true,
+      scrolling : 'no'
+
+    },
+});
+</script>
+</body>
+</html>

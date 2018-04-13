@@ -1,0 +1,657 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ChangeListManager">
+    <list default="true" id="5581fa65-b98d-45d1-ab97-696600ff14d9" name="Default" comment="">
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/composer.phar" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/var/cache/.gitkeep" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/var/logs/.gitkeep" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/var/sessions/.gitkeep" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/web/apple-touch-icon.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/web/favicon.ico" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/web/file/00000001.JPG" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/web/images/cache/couverture/tuto/web/bundles/images/couv/5.jpeg" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/web/images/cache/couverture/tuto/web/bundles/images/couv/6.jpeg" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/web/images/cache/lotmoyen/tuto/web/bundles/images/ventes/7/119849.jpg" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/web/images/cache/lotmoyen/tuto/web/bundles/images/ventes/7/119852.jpg" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/web/images/cache/lotmoyen/tuto/web/bundles/images/ventes/7/119901.jpg" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/web/images/cache/lotmoyen/tuto/web/bundles/images/ventes/7/119937.jpg" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/web/images/cache/lotmoyen/tuto/web/bundles/images/ventes/7/119972.jpg" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/web/images/cache/lotmoyen/tuto/web/bundles/images/ventes/7/120006.jpg" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/web/images/cache/lotmoyen/tuto/web/bundles/images/ventes/7/120046.jpg" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/web/images/cache/lotmoyen/tuto/web/bundles/images/ventes/7/120060.jpg" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/web/images/cache/lotmoyen/tuto/web/bundles/images/ventes/7/120066.jpg" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/web/images/cache/lotmoyen/tuto/web/bundles/images/ventes/7/120134.jpg" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/web/images/cache/lotmoyen/tuto/web/bundles/images/ventes/7/121256.JPG" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/web/images/cache/lotmoyen/tuto/web/bundles/images/ventes/7/121291.JPG" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/web/images/cache/lotmoyen/tuto/web/bundles/images/ventes/7/Jaguar10.jpg" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/web/images/cache/news/tuto/web/bundles/images/news/2-120873.JPG" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/web/images/cache/news/tuto/web/bundles/images/news/3-120944.JPG" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.gitignore" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/modules.xml" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/tuto.iml" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/vcs.xml" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/LICENSE" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/app/.htaccess" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/app/AppCache.php" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/app/AppKernel.php" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/app/Resources/views/default/index.html.twig" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/app/Resources/views/layout.html.twig" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/app/Resources/views/layout_mail.html.twig" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/app/autoload.php" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/app/config/config.yml" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/app/config/config_dev.yml" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/app/config/config_prod.yml" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/app/config/config_test.yml" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/app/config/parameters.yml.dist" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/app/config/routing.yml" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/app/config/routing_dev.yml" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/app/config/security.yml" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/app/config/services.yml" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/bin/console" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/bin/symfony_requirements" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/composer.json" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/composer.lock" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/phpunit.xml.dist" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/.htaccess" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/AuctionOne/MainBundle/AuctionOneMainBundle.php" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/AuctionOne/MainBundle/Controller/DefaultController.php" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/AuctionOne/MainBundle/Resources/config/services.yml" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/AuctionOne/MainBundle/Resources/views/Default/index.html.twig" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/HDV/AdminBundle/Controller/DefaultController.php" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/HDV/AdminBundle/Controller/EnquiryController.php" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/HDV/AdminBundle/Controller/EstimateController.php" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/HDV/AdminBundle/Controller/NewsController.php" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/HDV/AdminBundle/Controller/ObjectsController.php" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/HDV/AdminBundle/Controller/OrdresController.php" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/HDV/AdminBundle/Controller/UploadController.php" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/HDV/AdminBundle/Controller/UserController.php" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/HDV/AdminBundle/DependencyInjection/Configuration.php" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/HDV/AdminBundle/DependencyInjection/HDVAdminExtension.php" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/HDV/AdminBundle/Entity/Images.php" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/HDV/AdminBundle/HDVAdminBundle.php" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/HDV/AdminBundle/Resources/config/routing.yml" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/HDV/AdminBundle/Resources/config/routing_estimate.yml" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/HDV/AdminBundle/Resources/config/routing_news.yml" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/HDV/AdminBundle/Resources/config/services.yml" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/HDV/AdminBundle/Resources/views/Default/actions.html.twig" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/HDV/AdminBundle/Resources/views/Default/actions0.html.twig" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/HDV/AdminBundle/Resources/views/Default/actions1.html.twig" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/HDV/AdminBundle/Resources/views/Default/index.html.twig" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/HDV/AdminBundle/Resources/views/Default/panel.html.twig" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/HDV/AdminBundle/Resources/views/Default/tes.html" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/HDV/AdminBundle/Resources/views/Enquiry/answer.html.twig" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/HDV/AdminBundle/Resources/views/Enquiry/index.html.twig" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/HDV/AdminBundle/Resources/views/Enquiry/mail_answer.html.twig" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/HDV/AdminBundle/Resources/views/Enquiry/print.html.twig" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/HDV/AdminBundle/Resources/views/Estimate/answer.html.twig" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/HDV/AdminBundle/Resources/views/Estimate/index.html.twig" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/HDV/AdminBundle/Resources/views/Estimate/mail_answer.html.twig" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/HDV/AdminBundle/Resources/views/News/actions.html.twig" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/HDV/AdminBundle/Resources/views/News/add.html.twig" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/HDV/AdminBundle/Resources/views/News/edit.html.twig" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/HDV/AdminBundle/Resources/views/News/index.html.twig" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/HDV/AdminBundle/Resources/views/Objects/actions.html.twig" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/HDV/AdminBundle/Resources/views/Objects/add.html.twig" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/HDV/AdminBundle/Resources/views/Objects/edit.html.twig" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/HDV/AdminBundle/Resources/views/Objects/head.html.twig" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/HDV/AdminBundle/Resources/views/Objects/import.html.twig" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/HDV/AdminBundle/Resources/views/Objects/index.html.twig" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/HDV/AdminBundle/Resources/views/Objects/pictures.html.twig" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/HDV/AdminBundle/Resources/views/Objects/upload.html.twig" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/HDV/AdminBundle/Resources/views/Objects/uploadmore.html.twig" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/HDV/AdminBundle/Resources/views/Ordres/delete.html.twig" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/HDV/AdminBundle/Resources/views/Ordres/demandeci.html.twig" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/HDV/AdminBundle/Resources/views/Ordres/index.html.twig" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/HDV/AdminBundle/Resources/views/Ordres/mail_content.html.twig" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/HDV/AdminBundle/Resources/views/Ordres/mail_demande_content.html.twig" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/HDV/AdminBundle/Resources/views/Ordres/validate.html.twig" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/HDV/AdminBundle/Resources/views/Ventes/add.html.twig" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/HDV/AdminBundle/Resources/views/Ventes/edit.html.twig" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/HDV/AdminBundle/Resources/views/Ventes/index.html.twig" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/HDV/AdminBundle/Services/Mailer.php" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/HDV/AdminBundle/Tests/Controller/DefaultControllerTest.php" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/HDV/AdminBundle/Twig/DecryptageExtension.php" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/HDV/MainBundle/Command/ImportCommand.php" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/HDV/MainBundle/Controller/DefaultController.php" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/HDV/MainBundle/DependencyInjection/Configuration.php" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/HDV/MainBundle/DependencyInjection/HDVMainExtension.php" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/HDV/MainBundle/Entity/Estimate.php" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/HDV/MainBundle/Entity/Image.php" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/HDV/MainBundle/Entity/News.php" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/HDV/MainBundle/Entity/Pages.php" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/HDV/MainBundle/Form/EstimateType.php" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/HDV/MainBundle/Form/ImageType.php" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/HDV/MainBundle/Form/NewsType.php" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/HDV/MainBundle/HDVMainBundle.php" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/HDV/MainBundle/Imagine/Filter/Loader/Carousel.php" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/HDV/MainBundle/Repository/EstimateRepository.php" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/HDV/MainBundle/Repository/NewsRepository.php" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/HDV/MainBundle/Repository/PagesRepository.php" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/HDV/MainBundle/Resources/config/routing.yml" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/HDV/MainBundle/Resources/config/services.yml" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/HDV/MainBundle/Resources/views/Default/carousel.html.twig" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/HDV/MainBundle/Resources/views/Default/index.html.twig" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/HDV/MainBundle/Resources/views/Default/pages.html.twig" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/HDV/MainBundle/Resources/views/Estimate/index.html.twig" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/HDV/MainBundle/Resources/views/News/index.html.twig" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/HDV/MainBundle/Resources/views/News/news.html.twig" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/HDV/MainBundle/Resources/views/News/view.html.twig" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/HDV/MainBundle/Services/ConvertCsvToArray.php" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/HDV/MainBundle/Services/EncryptDecrypt.php" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/HDV/MainBundle/Services/FileUploader.php" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/HDV/MobileBundle/Controller/DefaultController.php" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/HDV/MobileBundle/Entity/Photo.php" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/HDV/MobileBundle/Entity/Saisie.php" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/HDV/MobileBundle/Form/PhotoType.php" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/HDV/MobileBundle/Form/SaisieType.php" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/HDV/MobileBundle/HDVMobileBundle.php" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/HDV/MobileBundle/Repository/PhotoRepository.php" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/HDV/MobileBundle/Repository/SaisieRepository.php" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/HDV/MobileBundle/Resources/config/services.yml" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/HDV/MobileBundle/Resources/views/Default/index.html.twig" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/HDV/UserBundle/Controller/MailControllerTest.php" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/HDV/UserBundle/Controller/ProfileController.php" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/HDV/UserBundle/DependencyInjection/Configuration.php" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/HDV/UserBundle/DependencyInjection/HDVUserExtension.php" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/HDV/UserBundle/Entity/Baccount.php" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/HDV/UserBundle/Entity/Ci.php" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/HDV/UserBundle/Entity/User.php" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/HDV/UserBundle/Form/BaccountType.php" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/HDV/UserBundle/Form/CiType.php" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/HDV/UserBundle/Form/EditCoordType.php" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/HDV/UserBundle/Form/ProfileFormType.php" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/HDV/UserBundle/Form/RegistrationFormType.php" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/HDV/UserBundle/HDVUserBundle.php" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/HDV/UserBundle/Repository/BaccountRepository.php" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/HDV/UserBundle/Repository/UserRepository.php" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/HDV/UserBundle/Resources/config/services.yml" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/HDV/UserBundle/Resources/views/ChangePassword/change_password.html.twig" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/HDV/UserBundle/Resources/views/ChangePassword/change_password_content.html.twig" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/HDV/UserBundle/Resources/views/Group/edit.html.twig" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/HDV/UserBundle/Resources/views/Group/edit_content.html.twig" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/HDV/UserBundle/Resources/views/Group/list.html.twig" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/HDV/UserBundle/Resources/views/Group/list_content.html.twig" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/HDV/UserBundle/Resources/views/Group/new.html.twig" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/HDV/UserBundle/Resources/views/Group/new_content.html.twig" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/HDV/UserBundle/Resources/views/Group/show.html.twig" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/HDV/UserBundle/Resources/views/Group/show_content.html.twig" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/HDV/UserBundle/Resources/views/Profile/baccount.html.twig" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/HDV/UserBundle/Resources/views/Profile/edit.html.twig" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/HDV/UserBundle/Resources/views/Profile/edit_content.html.twig" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/HDV/UserBundle/Resources/views/Profile/editcoord.html.twig" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/HDV/UserBundle/Resources/views/Profile/mailci.html.twig" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/HDV/UserBundle/Resources/views/Profile/mailci_content.html.twig" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/HDV/UserBundle/Resources/views/Profile/mesestims.html.twig" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/HDV/UserBundle/Resources/views/Profile/mesordres.html.twig" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/HDV/UserBundle/Resources/views/Profile/show.html.twig" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/HDV/UserBundle/Resources/views/Profile/show_content.html.twig" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/HDV/UserBundle/Resources/views/Registration/check_email.html.twig" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/HDV/UserBundle/Resources/views/Registration/confirmed.html.twig" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/HDV/UserBundle/Resources/views/Registration/email.html.twig" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/HDV/UserBundle/Resources/views/Registration/mail_content.html.twig" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/HDV/UserBundle/Resources/views/Registration/register.html.twig" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/HDV/UserBundle/Resources/views/Registration/register_content.html.twig" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/HDV/UserBundle/Resources/views/Resetting/check_email.html.twig" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/HDV/UserBundle/Resources/views/Resetting/email.html.twig" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/HDV/UserBundle/Resources/views/Resetting/mail_content.html.twig" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/HDV/UserBundle/Resources/views/Resetting/request.html.twig" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/HDV/UserBundle/Resources/views/Resetting/request_content.html.twig" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/HDV/UserBundle/Resources/views/Resetting/reset.html.twig" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/HDV/UserBundle/Resources/views/Resetting/reset_content.html.twig" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/HDV/UserBundle/Resources/views/Security/login.html.twig" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/HDV/UserBundle/Resources/views/Security/login_content.html.twig" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/HDV/UserBundle/Resources/views/Ventes/view.html.twig" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/HDV/UserBundle/Resources/views/Ventes/viewacq.html.twig" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/HDV/UserBundle/Resources/views/layout.html.twig" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/HDV/VentesBundle/Controller/DefaultController.php" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/HDV/VentesBundle/Controller/EnquiryController.php" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/HDV/VentesBundle/Controller/OrdresController.php" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/HDV/VentesBundle/DependencyInjection/Configuration.php" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/HDV/VentesBundle/DependencyInjection/HDVVentesExtension.php" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/HDV/VentesBundle/Entity/Enquiry.php" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/HDV/VentesBundle/Entity/Famille.php" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/HDV/VentesBundle/Entity/Image.php" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/HDV/VentesBundle/Entity/Objects.php" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/HDV/VentesBundle/Entity/Ordres.php" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/HDV/VentesBundle/Entity/Ventes.php" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/HDV/VentesBundle/Form/DataTransformer/DateTimeTransformer.php" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/HDV/VentesBundle/Form/EnquiryLogType.php" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/HDV/VentesBundle/Form/EnquiryType.php" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/HDV/VentesBundle/Form/ImageType.php" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/HDV/VentesBundle/Form/ObjectsEditType.php" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/HDV/VentesBundle/Form/ObjectsType.php" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/HDV/VentesBundle/Form/OrdresType.php" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/HDV/VentesBundle/Form/VentesType.php" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/HDV/VentesBundle/HDVVentesBundle.php" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/HDV/VentesBundle/Repository/FamilleRepository.php" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/HDV/VentesBundle/Repository/ImageRepository.php" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/HDV/VentesBundle/Repository/ObjectsRepository.php" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/HDV/VentesBundle/Repository/OrdresRepository.php" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/HDV/VentesBundle/Repository/VentesRepository.php" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/HDV/VentesBundle/Resources/config/routing.yml" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/HDV/VentesBundle/Resources/config/services.yml" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/HDV/VentesBundle/Resources/views/Default/actions.html.twig" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/HDV/VentesBundle/Resources/views/Default/actions0.html.twig" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/HDV/VentesBundle/Resources/views/Default/actions1.html.twig" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/HDV/VentesBundle/Resources/views/Default/actions2.html.twig" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/HDV/VentesBundle/Resources/views/Enquiry/index.html.twig" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/HDV/VentesBundle/Resources/views/Objects/view.html.twig" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/HDV/VentesBundle/Resources/views/Ordres/catordre.html.twig" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/HDV/VentesBundle/Resources/views/Ordres/form.html.twig" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/HDV/VentesBundle/Resources/views/Ventes/catalogue.html.twig" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/HDV/VentesBundle/Resources/views/Ventes/images.html.twig" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/HDV/VentesBundle/Resources/views/Ventes/include.html.twig" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/HDV/VentesBundle/Resources/views/Ventes/index.html.twig" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/HDV/VentesBundle/Resources/views/Ventes/menu.html.twig" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/HDV/VentesBundle/Resources/views/Ventes/old.html.twig" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/HDV/VentesBundle/Resources/views/Ventes/plus.html.twig" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/HDV/VentesBundle/Resources/views/Ventes/view.html.twig" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/HDV/VentesBundle/Tests/Controller/DefaultControllerTest.php" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/HDV/VentesBundle/Twig/ImagesmultipleExtension.php" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/HDV/VentesBundle/Twig/SubstrDatatablesExtension.php" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/test.html" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/tests/AppBundle/Controller/DefaultControllerTest.php" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/tests/AuctionOneMainBundle/Controller/DefaultControllerTest.php" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/tests/HDVMobileBundle/Controller/DefaultControllerTest.php" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/tests/MobileBundle/Controller/DefaultControllerTest.php" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/var/SymfonyRequirements.php" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/web/.htaccess" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/web/app.php" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/web/app_dev.php" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/web/config.php" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/web/css/35060dd.css" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/web/css/35060dd_dataTables.bootstrap.min_1.css" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/web/css/3a828ab.css" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/web/css/3a828ab_part_1_bootstrap-theme.css_2.css" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/web/css/3a828ab_part_1_bootstrap-theme.min.css_4.css" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/web/css/3a828ab_part_1_bootstrap-theme.min_3.css" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/web/css/3a828ab_part_1_bootstrap-theme_1.css" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/web/css/3a828ab_part_1_bootstrap.css_6.css" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/web/css/3a828ab_part_1_bootstrap.min.css_8.css" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/web/css/3a828ab_part_1_bootstrap.min_7.css" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/web/css/3a828ab_part_1_bootstrap_5.css" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/web/css/3a828ab_part_1_dataTables.bootstrap.min_9.css" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/web/css/3a828ab_part_1_fontlive_10.css" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/web/css/3a828ab_part_1_jquery.fancybox.min_11.css" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/web/css/3a828ab_part_1_jumbotron-narrow_12.css" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/web/css/3a828ab_part_1_my_13.css" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/web/css/3da596e.css" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/web/css/3da596e_fontlive_1.css" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/web/css/7e5a594.css" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/web/css/7e5a594_bootstrap3-wysihtml5.min_1.css" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/web/css/a4f3dfa.css" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/web/css/a4f3dfa_part_1_AdminLTE.min_1.css" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/web/css/a4f3dfa_part_1_blue_2.css" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/web/css/a4f3dfa_part_1_blue_3.css" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/web/css/a4f3dfa_part_1_bootstrap-datetimepicker.min_4.css" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/web/css/a4f3dfa_part_1_bootstrap-theme.min_5.css" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/web/css/a4f3dfa_part_1_bootstrap.min_6.css" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/web/css/a4f3dfa_part_1_skin-blue_7.css" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/web/css/abafc77.css" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/web/css/abafc77_jquery.fancybox.min_1.css" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/web/css/f42ef0f.css" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/web/css/f42ef0f_part_1_1marble_1.css" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/web/css/f42ef0f_part_1_elements_2.css" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/web/css/f42ef0f_part_1_marble_3.css" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/web/css/f42ef0f_part_1_preloader_4.css" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/web/css/f42ef0f_part_1_reset_5.css" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/web/css/f42ef0f_part_1_static_6.css" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/web/css/f42ef0f_part_1_style_7.css" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/web/import.csv" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/web/js/2d146a1.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/web/js/2d146a1_bootstrap3-wysihtml5.all.min_1.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/web/js/37c550c.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/web/js/37c550c_jquery-2.2.3.min_1.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/web/js/387a754.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/web/js/387a754_jquery.dataTables.min_1.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/web/js/6a2888c.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/web/js/6a2888c_icheck.min_1.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/web/js/7178cd7.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/web/js/7178cd7_onload_1.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/web/js/74da5e7.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/web/js/74da5e7_jquery.fancybox.min_1.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/web/js/8748e1e.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/web/js/8748e1e_jquery.address-1.6.min_1.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/web/js/906d40e.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/web/js/906d40e_dataTables.bootstrap.min_1.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/web/js/98b5c4f.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/web/js/98b5c4f_jquery_1.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/web/js/baff783.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/web/js/baff783_wait_1.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/web/js/bcf85ac.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/web/js/bcf85ac_turn_1.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/web/js/f1c90af.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/web/js/f1c90af_jquery.fullscreen_1.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/web/js/f245a2e.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/web/js/f245a2e_app.min_1.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/web/js/f7f9907.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/web/js/f7f9907_bootstrap.min_1.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/web/js/fe15aee.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/web/js/fe15aee_part_1_bootstrap.min_2.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/web/js/fe15aee_part_1_bootstrap_1.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/web/js/fe15aee_part_1_scripts_3.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/web/robots.txt" />
+    </list>
+    <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
+    <option name="TRACKING_ENABLED" value="true" />
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="FileEditorManager">
+    <leaf>
+      <file leaf-file-name="parameters.yml" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/app/config/parameters.yml">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="170">
+              <caret line="10" column="24" lean-forward="false" selection-start-line="10" selection-start-column="24" selection-end-line="10" selection-end-column="24" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+    </leaf>
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
+  <component name="GradleLocalSettings">
+    <option name="externalProjectsViewState">
+      <projects_view />
+    </option>
+  </component>
+  <component name="IdeDocumentHistory">
+    <option name="CHANGED_PATHS">
+      <list>
+        <option value="$PROJECT_DIR$/app/config/parameters.yml" />
+      </list>
+    </option>
+  </component>
+  <component name="JsBuildToolGruntFileManager" detection-done="true" sorting="DEFINITION_ORDER" />
+  <component name="JsBuildToolPackageJson" detection-done="true" sorting="DEFINITION_ORDER" />
+  <component name="JsGulpfileManager">
+    <detection-done>true</detection-done>
+    <sorting>DEFINITION_ORDER</sorting>
+  </component>
+  <component name="ProjectFrameBounds" extendedState="6">
+    <option name="x" value="3" />
+    <option name="y" value="22" />
+    <option name="width" value="1402" />
+    <option name="height" value="939" />
+  </component>
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
+  <component name="ProjectView">
+    <navigator currentView="ProjectPane" proportions="" version="1">
+      <flattenPackages />
+      <showMembers />
+      <showModules />
+      <showLibraryContents />
+      <hideEmptyPackages />
+      <abbreviatePackageNames />
+      <autoscrollToSource />
+      <autoscrollFromSource />
+      <sortByType />
+      <manualOrder />
+      <foldersAlwaysOnTop value="true" />
+    </navigator>
+    <panes>
+      <pane id="Scratches" />
+      <pane id="ProjectPane">
+        <subPane>
+          <expand>
+            <path>
+              <item name="tuto" type="b2602c69:ProjectViewProjectNode" />
+              <item name="tuto" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="tuto" type="b2602c69:ProjectViewProjectNode" />
+              <item name="tuto" type="462c0819:PsiDirectoryNode" />
+              <item name="app" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="tuto" type="b2602c69:ProjectViewProjectNode" />
+              <item name="tuto" type="462c0819:PsiDirectoryNode" />
+              <item name="app" type="462c0819:PsiDirectoryNode" />
+              <item name="config" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="tuto" type="b2602c69:ProjectViewProjectNode" />
+              <item name="tuto" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+            </path>
+          </expand>
+          <select />
+        </subPane>
+      </pane>
+      <pane id="AndroidView" />
+      <pane id="Scope" />
+      <pane id="PackagesPane" />
+    </panes>
+  </component>
+  <component name="PropertiesComponent">
+    <property name="WebServerToolWindowFactoryState" value="false" />
+    <property name="aspect.path.notification.shown" value="true" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
+  </component>
+  <component name="RunDashboard">
+    <option name="ruleStates">
+      <list>
+        <RuleState>
+          <option name="name" value="ConfigurationTypeDashboardGroupingRule" />
+        </RuleState>
+        <RuleState>
+          <option name="name" value="StatusDashboardGroupingRule" />
+        </RuleState>
+      </list>
+    </option>
+  </component>
+  <component name="RunManager">
+    <configuration default="true" type="Applet" factoryName="Applet">
+      <option name="HTML_USED" value="false" />
+      <option name="WIDTH" value="400" />
+      <option name="HEIGHT" value="300" />
+      <option name="POLICY_FILE" value="$APPLICATION_HOME_DIR$/bin/appletviewer.policy" />
+      <module />
+    </configuration>
+    <configuration default="true" type="Application" factoryName="Application">
+      <extension name="coverage" enabled="false" merge="false" sample_coverage="true" runner="idea" />
+      <option name="MAIN_CLASS_NAME" />
+      <option name="VM_PARAMETERS" />
+      <option name="PROGRAM_PARAMETERS" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
+      <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
+      <option name="ALTERNATIVE_JRE_PATH" />
+      <option name="ENABLE_SWING_INSPECTOR" value="false" />
+      <option name="ENV_VARIABLES" />
+      <option name="PASS_PARENT_ENVS" value="true" />
+      <module name="" />
+      <envs />
+    </configuration>
+    <configuration default="true" type="JUnit" factoryName="JUnit">
+      <extension name="coverage" enabled="false" merge="false" sample_coverage="true" runner="idea" />
+      <module name="" />
+      <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
+      <option name="ALTERNATIVE_JRE_PATH" />
+      <option name="PACKAGE_NAME" />
+      <option name="MAIN_CLASS_NAME" />
+      <option name="METHOD_NAME" />
+      <option name="TEST_OBJECT" value="class" />
+      <option name="VM_PARAMETERS" value="-ea" />
+      <option name="PARAMETERS" />
+      <option name="WORKING_DIRECTORY" value="$MODULE_DIR$" />
+      <option name="ENV_VARIABLES" />
+      <option name="PASS_PARENT_ENVS" value="true" />
+      <option name="TEST_SEARCH_SCOPE">
+        <value defaultName="singleModule" />
+      </option>
+      <envs />
+      <patterns />
+    </configuration>
+    <configuration default="true" type="#org.jetbrains.idea.devkit.run.PluginConfigurationType" factoryName="Plugin">
+      <module name="" />
+      <option name="VM_PARAMETERS" value="-Xmx512m -Xms256m -XX:MaxPermSize=250m -ea" />
+      <option name="PROGRAM_PARAMETERS" />
+      <predefined_log_file id="idea.log" enabled="true" />
+    </configuration>
+    <configuration default="true" type="Remote" factoryName="Remote">
+      <option name="USE_SOCKET_TRANSPORT" value="true" />
+      <option name="SERVER_MODE" value="false" />
+      <option name="SHMEM_ADDRESS" value="javadebug" />
+      <option name="HOST" value="localhost" />
+      <option name="PORT" value="5005" />
+    </configuration>
+    <configuration default="true" type="TestNG" factoryName="TestNG">
+      <extension name="coverage" enabled="false" merge="false" sample_coverage="true" runner="idea" />
+      <module name="" />
+      <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
+      <option name="ALTERNATIVE_JRE_PATH" />
+      <option name="SUITE_NAME" />
+      <option name="PACKAGE_NAME" />
+      <option name="MAIN_CLASS_NAME" />
+      <option name="METHOD_NAME" />
+      <option name="GROUP_NAME" />
+      <option name="TEST_OBJECT" value="CLASS" />
+      <option name="VM_PARAMETERS" value="-ea" />
+      <option name="PARAMETERS" />
+      <option name="WORKING_DIRECTORY" value="$MODULE_DIR$" />
+      <option name="OUTPUT_DIRECTORY" />
+      <option name="ANNOTATION_TYPE" />
+      <option name="ENV_VARIABLES" />
+      <option name="PASS_PARENT_ENVS" value="true" />
+      <option name="TEST_SEARCH_SCOPE">
+        <value defaultName="singleModule" />
+      </option>
+      <option name="USE_DEFAULT_REPORTERS" value="false" />
+      <option name="PROPERTIES_FILE" />
+      <envs />
+      <properties />
+      <listeners />
+    </configuration>
+  </component>
+  <component name="ShelveChangesManager" show_recycled="false">
+    <option name="remove_strategy" value="false" />
+  </component>
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="5581fa65-b98d-45d1-ab97-696600ff14d9" name="Default" comment="" />
+      <created>1523622297235</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1523622297235</updated>
+      <workItem from="1523622298915" duration="684000" />
+    </task>
+    <servers />
+  </component>
+  <component name="TimeTrackingManager">
+    <option name="totallyTimeSpent" value="684000" />
+  </component>
+  <component name="ToolWindowManager">
+    <frame x="-8" y="-8" width="1936" height="1056" extended-state="6" />
+    <layout>
+      <window_info id="Palette" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="-1" side_tool="false" content_ui="tabs" />
+      <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
+      <window_info id="Palette&#9;" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="-1" side_tool="false" content_ui="tabs" />
+      <window_info id="Image Layers" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="-1" side_tool="false" content_ui="tabs" />
+      <window_info id="Capture Analysis" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="-1" side_tool="false" content_ui="tabs" />
+      <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="-1" side_tool="true" content_ui="tabs" />
+      <window_info id="Maven Projects" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="-1" side_tool="false" content_ui="tabs" />
+      <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="-1" side_tool="false" content_ui="tabs" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Mongo Explorer" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="-1" side_tool="false" content_ui="tabs" />
+      <window_info id="Terminal" active="true" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.32934782" sideWeight="0.5" order="-1" side_tool="false" content_ui="tabs" />
+      <window_info id="Capture Tool" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="-1" side_tool="false" content_ui="tabs" />
+      <window_info id="Designer" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="-1" side_tool="false" content_ui="tabs" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="-1" side_tool="false" content_ui="tabs" />
+      <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
+      <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
+      <window_info id="UI Designer" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="-1" side_tool="false" content_ui="tabs" />
+      <window_info id="Theme Preview" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="-1" side_tool="false" content_ui="tabs" />
+      <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="-1" side_tool="true" content_ui="tabs" />
+      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
+      <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
+      <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="combo" />
+      <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
+      <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
+      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
+      <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
+    </layout>
+  </component>
+  <component name="TypeScriptGeneratedFilesManager">
+    <option name="version" value="1" />
+  </component>
+  <component name="VcsContentAnnotationSettings">
+    <option name="myLimit" value="2678400000" />
+  </component>
+  <component name="XDebuggerManager">
+    <breakpoint-manager />
+    <watches-manager />
+  </component>
+  <component name="editorHistoryManager">
+    <entry file="file://$PROJECT_DIR$/app/config/config.yml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-2134">
+          <caret line="26" column="13" lean-forward="true" selection-start-line="26" selection-start-column="13" selection-end-line="26" selection-end-column="13" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/config/config_prod.yml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/config/config_test.yml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/config/parameters.yml.dist">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/config/routing.yml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/config/parameters.yml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="170">
+          <caret line="10" column="24" lean-forward="false" selection-start-line="10" selection-start-column="24" selection-end-line="10" selection-end-column="24" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+  </component>
+  <component name="masterDetails">
+    <states>
+      <state key="ProjectJDKs.UI">
+        <settings>
+          <splitter-proportions>
+            <option name="proportions">
+              <list>
+                <option value="0.2" />
+              </list>
+            </option>
+          </splitter-proportions>
+        </settings>
+      </state>
+    </states>
+  </component>
+</project>

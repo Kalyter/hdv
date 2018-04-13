@@ -1,0 +1,4 @@
+{% for image in images %}
+<a href="{{ asset('bundles/images/ventes/'~vente~'/'~ image) }}" data-fancybox="images">
+<img src="{{ asset('hdv/web/bundles/images/ventes/'~vente~'/'~ image) | imagine_filter('lotmoyen') }}" from="multiple" value="{{ image }}" onError="ImageLoadFailed()" style="max-width:{{ size }}px;max-height:{{ size }}px;"/></a>
+{% endfor %}

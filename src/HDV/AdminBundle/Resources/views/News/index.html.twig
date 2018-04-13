@@ -1,0 +1,28 @@
+{% extends "HDVAdminBundle:Default:index.html.twig" %}
+{% block body %}
+
+<h2>Actualités</h2>
+<div class="grad"></div>
+<a href="{{ path('hdv_admin_add_news') }}" class="btn btn-default"><span class="fa fa-lg  fa-plus" style="margin-right:5px;"></span> Ajouter une actualité</a>
+
+<br/><br/>
+<div class="box box-content" style="border-top-color:#511a1a;">
+  <div class="box-header with-border">
+          <h3 class="box-title">Liste des actualités</h3>
+        </div>
+  <div class="box-body content">
+{{ datatable({
+     'id' : 'n1',
+      'js' : {
+          'ajax' : path('hdv_admin_news_grid'),
+    'columnDefs': [
+              { "width": "15%", "targets": 1 },
+              { "width": "50%", "targets": 2 }
+          ]
+      }
+  })
+}}
+</div>
+</div>
+
+{% endblock %}

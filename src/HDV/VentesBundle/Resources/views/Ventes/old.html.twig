@@ -1,0 +1,106 @@
+{% extends "::layout.html.twig" %}
+{% block body %}
+
+<section class="content">
+<div class="row">
+    <div class="col-md-8">
+    <div class="box box-content">
+      <div class="box-body content">
+        <div class="box-header with-border">
+          <h3 class="box-title">Calendrier des ventes passées</strong>
+        </div>
+  <br/>
+    {% set mois = "" %}
+    {% for ventes in listVentes %}
+    {% if mois == ventes.date|date("m") %}
+      <div class="row" style="text-align:left;margin-bottom: 20px;margin-top: 20px;margin-left: 30px;">
+      <div class="col-md-8" style="padding:10px;">
+        <b>{{ ventes.date|localizeddate('full', 'short', 'fr')|capitalize }}</b><br/>
+        <font color=#D3AF55>{{ ventes.title }}</font><br/>
+          <div class="btn-group btn-group-xs">
+           {% if ventes.objects|length > 1 %}
+            <a class="btn btn-menu" href="{{ path('hdv_ventes_view', {'id': ventes.id}) }}"><i class="fa fa-fw  fa-list" style="font-size: 24px"></i><br/>Lots</a>
+            {% endif %}
+            <a class="btn btn-menu" href="{{ path('hdv_ventes_plus', {'id': ventes.id}) }}"><i class="fa fa-fw fa-info-circle" style="font-size: 24px"></i><br/>Informations</a>
+            {% if ventes.catpublished == 1 %}
+            <a class="btn btn-menu" href="{{ path('hdv_ventes_catalogue', {'id': ventes.id}) }}"><i class="fa fa-fw fa-book" style="font-size: 24px"></i><br/>Catalogue</a>
+            {% endif %}
+            {% if ventes.liveurl|length > 1 %}
+             <a class="btn btn-menu" target="_blank" href="{{ relative_path(ventes.liveurl) }}"><i class="icon-live" style="font-size: 21px"></i><br/>Enchérir en live</a>
+             {% endif %}
+          </div>
+      </div>
+        <div class="col-md-4" style="width:20%;">
+          {% if ventes.image is not null %}
+            <img style="border: 1px solid #d0d0d0;" src="{{ asset(ventes.image.webPath) | imagine_filter('couverture') }}" alt="{{ ventes.image.alt }}">
+            {% else %}
+            <img style="max-height:160px;border: 1px solid #d0d0d0;" src="{{ asset("bundles/images/couv/sans.jpg") }}" alt="sans">
+          {% endif %}
+        </div>
+      </div>
+      {% else %}
+      <h1 style="margin-left: 15px;">{{ ventes.date|localizeddate('full', 'none', 'fr', null, "MMMM")|capitalize  }}</h1>
+      <div class="row" style="text-align:left;margin-bottom: 20px;margin-top: 20px;margin-left: 30px;">
+      <div class="col-md-8" style="padding:10px;">
+        <b>{{ ventes.date|localizeddate('full', 'short', 'fr')|capitalize }}</b><br/>
+        <font color=#D3AF55>{{ ventes.title }}</font><br/>
+          <div class="btn-group btn-group-xs">
+           {% if ventes.objects|length > 1 %}
+            <a class="btn btn-menu" href="{{ path('hdv_ventes_view', {'id': ventes.id}) }}"><i class="fa fa-fw  fa-list" style="font-size: 24px"></i><br/>Lots</a>
+            {% endif %}
+            <a class="btn btn-menu" href="{{ path('hdv_ventes_plus', {'id': ventes.id}) }}"><i class="fa fa-fw fa-info-circle" style="font-size: 24px"></i><br/>Informations</a>
+            {% if ventes.catpublished == 1 %}
+            <a class="btn btn-menu" href="{{ path('hdv_ventes_catalogue', {'id': ventes.id}) }}"><i class="fa fa-fw fa-book" style="font-size: 24px"></i><br/>Catalogue</a>
+            {% endif %}
+            {% if ventes.liveurl|length > 1 %}
+             <a class="btn btn-menu" target="_blank" href="{{ relative_path(ventes.liveurl) }}"><i class="icon-live" style="font-size: 21px"></i><br/>Enchérir en live</a>
+             {% endif %}
+          </div>
+      </div>
+        <div class="col-md-4" style="width:20%;">
+          {% if ventes.image is not null %}
+            <img style="border: 1px solid #d0d0d0;" src="{{ asset(ventes.image.webPath) | imagine_filter('couverture') }}" alt="{{ ventes.image.alt }}">
+            {% else %}
+            <img style="max-height:160px;border: 1px solid #d0d0d0;" src="{{ asset("bundles/images/couv/sans.jpg") }}" alt="sans">
+          {% endif %}
+        </div>
+      </div>
+      {% set mois = ventes.date|date("m") %}
+      {% endif %}
+      {% endfor %}
+
+</div>
+</div>
+</div>
+
+<div class="col-md-4">
+  <div class="box box-primary">
+    <div class="box-body text-center">
+      <div class="box-header with-border">
+        <h3 class="box-title">Informations</h3>
+      </div><br/>
+      <img style="width:220px;" src="{{ asset('bundles/images/estimate.jpg') }}" alt="sans">
+  <div class="alert alert-info"><b>Vous souhaitez vendre un objet ?</b><br/><br/>C'est très simple, vous pouvez profiter de notre formulaire d'estimation gratuite en ligne en cliquant <a style="color:black;font-weight:bold;" href="{{ url('hdv_main_estimate') }}">ici</a>, ou tout simplement en nous contactant directement par téléphone ou e-mail.<br/>
+  <h5 style="text-align:left;"><span class="fa fa-fw fa-phone"></span> Téléphone :<br/><b>01 34 12 68 16</b><br/><small>Du mardi au vendredi de 9h00 à 12h30 et de 14h00 à 18h00</small></h5>
+  <h5 style="text-align:left;"><span class="fa fa-fw fa-paperclip"></span> E-mail :<br/><br/><b>contact@enghien-svv.com</b></h5></div>
+
+  <div class="alert alert-warning"><b>Vous souhaitez acheter un objet ?</b><br/><br/>
+    L’accès aux salles des ventes aux enchères est gratuit et ouvert au public.<br/>
+    L’Hôtel des Ventes d’Enghien propose chaque année aux amateurs plus de 20 000 objets et oeuvres  d'art réparties dans une cinquantaine de ventes spécialisées, cataloguées, ou ventes courantes.<br/><br/>
+    N'hésitez pas à faire un tour sur notre page <i>Acheter</i> pour en savoir plus.
+    <br/>
+
+
+  </div>
+    </div>
+  </div>
+  </div>
+</section>
+
+
+</div>
+
+  {% endblock %}
+  {% block footer %}
+
+  {% endblock %}

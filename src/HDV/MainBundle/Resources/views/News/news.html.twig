@@ -1,0 +1,15 @@
+
+
+  {% for news in listNews %}
+  <div class="row news">
+    <div class="width:100%;text-align:center;">
+    {% if news.image is not null %}
+      <img style="border: 1px solid black;" src="{{ asset(news.image.webPath) | imagine_filter('news') }}" alt="{{ news.image.alt }}">
+      {% else %}
+      <img style="max-height:160px;border: 1px solid black;" src="{{ asset("bundles/images/couv/sans.jpg") | imagine_filter('news') }}" alt="sans">
+    {% endif %}<br/>
+      <b><font color=#D3AF55>{{ news.title }}</font></b><br/>
+      {{ news.date|localizeddate('full', 'none', 'fr')|capitalize }}<a class="btn btn-news" href="{{path('hdv_main_news_view', {'news': news.id}) }}"><i class="fa fa-fw  fa-eye" style="font-size: 18px"></i>Lire...</a>
+  </div>
+  </div>
+  {% endfor %}

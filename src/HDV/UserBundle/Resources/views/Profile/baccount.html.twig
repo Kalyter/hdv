@@ -1,0 +1,23 @@
+{% extends "@FOSUser/layout.html.twig" %}
+{% block fos_user_content %}
+      <div class="box-header with-border">
+              <h3 class="box-title">Vos informations bancaire</h3>
+            </div>
+          <div class="box-body content">
+            {% if app.user.bacc is null %}
+            {% else %}
+            <div class="alert alert-info">Vous avez déjà renseigné des informations bancaires à propos de la banque suivante : <b>{{ app.user.bacc.name }}</b></div>
+            {% endif %}
+            {{ form_start(form) }}
+            {{ form_widget(form) }}
+            {{ form_end(form) }}
+            <small>Conformément à la loi "informatique et libertés" du 6 janvier 1978 modifiée, vous bénéficiez d’un droit d’accès et de rectification aux informations qui vous concernent,
+              toutes les informations bancaires saisies sont cryptées et conservées sous verrou informatique jusqu'à la desactivation de votre compte.<br/>
+              Si vous souhaitez exercer ce droit et obtenir communication des informations vous concernant, veuillez vous adresser à l'étude Goxe-Belaïsch.
+            </small>
+              <br/>
+            </div>
+
+
+
+{% endblock %}

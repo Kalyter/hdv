@@ -1,0 +1,162 @@
+hdv_admin_home:
+    path:     /
+    defaults: { _controller: HDVAdminBundle:Default:indexpanel }
+
+hdv_admin_user_validate:
+    path:     /validate/user/{userid}
+    defaults: { _controller: HDVAdminBundle:User:setvalidate }
+
+hdv_admin_ventes_home:
+    path:     /listventes/{period}
+    defaults: { _controller: HDVAdminBundle:Default:index }
+
+hdv_admin_upload_images:
+    path:     /upload/images/{idvente}
+    defaults: { _controller: HDVAdminBundle:Upload:index }
+    requirements:
+        id: \d+
+
+hdv_admin_upload_moreimages:
+    path:     /upload/moreimages/{id}
+    defaults: { _controller: HDVAdminBundle:Upload:morepictures }
+    requirements:
+        id: \d+
+
+hdv_admin_add_vente:
+    path:     /ventes/add
+    defaults: { _controller: HDVAdminBundle:Default:addventes }
+
+hdv_admin_edit_vente:
+    path:     /ventes/edit/{id}
+    defaults: { _controller: HDVAdminBundle:Default:editventes }
+    requirements:
+        id: \d+
+
+hdv_admin_ventes_update:
+    path:     /ventes/update/{id}
+    defaults: { _controller: HDVAdminBundle:Default:miseajour }
+    requirements:
+        id: \d+
+
+hdv_admin_ventes_grid:
+    path:     /grid/{period}
+    defaults: { _controller: HDVAdminBundle:Default:grid }
+
+ajax_snippet_image_send:
+    path:     /upload/images/action/{idvente}
+    defaults: { _controller: HDVAdminBundle:Upload:ajaxSnippetImageSend }
+    requirements:
+        id: \d+
+
+ajax_snippet_image_more_send:
+    path:     /upload/moreimages/action/{id}
+    defaults: { _controller: HDVAdminBundle:Upload:ajaxSnippetImageMoreSend }
+    requirements:
+        id: \d+
+
+hdv_admin_objects_vente:
+    path:      /objects/vente/{id}
+    defaults:
+        _controller: HDVAdminBundle:Objects:index
+    requirements:
+        id: \d+
+
+hdv_admin_objects_import:
+    path:      /objects/import/{id}
+    defaults:
+        _controller: HDVAdminBundle:Objects:import
+    requirements:
+        id: \d+
+
+hdv_admin_objects_add:
+    path:      /objects/add/{vente}
+    defaults:
+        _controller: HDVAdminBundle:Objects:addobject
+    requirements:
+        id: \d+
+
+hdv_admin_objects_edit:
+    path:      /objects/edit/{object}
+    defaults:
+        _controller: HDVAdminBundle:Objects:editobject
+    requirements:
+        id: \d+
+
+hdv_admin_objects_delete:
+    path:      /objects/delete/{object}
+    defaults:
+        _controller: HDVAdminBundle:Objects:delete
+
+hdv_admin_objects_pictures:
+    path:      /objects/images/{object}
+    defaults:
+        _controller: HDVAdminBundle:Objects:pictures
+    requirements:
+        id: \d+
+
+hdv_admin_objects_reqdossier:
+    path:      /objects/req/{dossier}
+    defaults:
+        _controller: HDVAdminBundle:Objects:reqdossier
+    options:
+        expose: true
+
+hdv_admin_objects_pictures_update:
+    path:      /objects/pictures/{object}/{from}/{value}/{section}
+    defaults:
+        _controller: HDVAdminBundle:Objects:updatepictures
+    options:
+        expose: true
+
+hdv_admin_objects_vente_grid:
+    path:      /objects/vente/grid/{id}
+    defaults:
+        _controller: HDVAdminBundle:Objects:grid
+    requirements:
+        id: \d+
+
+hdv_admin_ordres_futur:
+    path:     /ordres/futur
+    defaults: { _controller: HDVAdminBundle:Ordres:indexfutur }
+
+hdv_admin_ordres_old:
+    path:     /ordres/old
+    defaults: { _controller: HDVAdminBundle:Ordres:indexold }
+
+hdv_admin_ordres_delete:
+    path:     /ordres/delete/{id}
+    defaults: { _controller: HDVAdminBundle:Ordres:delete }
+    requirements:
+        id: \d+
+
+hdv_admin_ordres_validate:
+    path:     /ordres/validate/{id}
+    defaults: { _controller: HDVAdminBundle:Ordres:validate }
+    requirements:
+        id: \d+
+
+hdv_admin_ordres_demandeci:
+    path:     /ordres/demandeci/{id}
+    defaults: { _controller: HDVAdminBundle:Ordres:demandeci }
+    requirements:
+        id: \d+
+
+hdv_admin_ordres_export:
+    path:     /ordres/export
+    defaults: { _controller: HDVAdminBundle:Ordres:exportordres }
+
+hdv_admin_enquiry_index:
+    path:     /enquiry
+    defaults: { _controller: HDVAdminBundle:Enquiry:index }
+
+hdv_admin_enquiry_print:
+    path:     /enquiry/print/{id}
+    defaults: { _controller: HDVAdminBundle:Enquiry:print }
+    requirements:
+        id: \d+
+
+hdv_admin_enquiry_answer:
+    path:     /enquiry/answer/{id}
+    defaults: { _controller: HDVAdminBundle:Enquiry:answer }
+    requirements:
+        id: \d+

@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="">
+    <meta name="author" content="">
+    <link rel="icon" href="../../favicon.ico">
+
+  <title>{% block title %}Isabelle GOXE - Laurent BELAISCH{% endblock %}</title>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.5.0/css/font-awesome.min.css">
+ {% stylesheets filter='cssrewrite' 'bundles/css/site/*' %}
+  <link rel="stylesheet" href="{{ asset_url }}" type="text/css" />
+{% endstylesheets %}
+{% stylesheets filter='cssrewrite' 'bundles/css/fontlive.css' %}
+ <link rel="stylesheet" href="{{ asset_url }}" type="text/css" />
+{% endstylesheets %}
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+ <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+{% javascripts 'bundles/js2/*' %}
+  <script type="text/javascript" src="{{ asset_url }}"></script>
+{% endjavascripts %}
+{% javascripts 'bundles/js/jquery.fancybox.min.js' %}
+  <script type="text/javascript" src="{{ asset_url }}"></script>
+{% endjavascripts %}
+     <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
+    <!--[if lt IE 9]>
+      <script src="https://oss.maxcdn.com/html5shiv/3.7.3/html5shiv.min.js"></script>
+      <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
+    <![endif]-->
+  </head>
+
+  <body>
+
+    <div class="container" style="min-height: 100vh;">
+      <div class="header clearfix" style="background-color: white;margin-bottom: 15px;">
+
+{% image 'bundles/logo5.jpg' %}
+    <img src="{{ asset_url }}" class="img-responsive"/>
+{% endimage %}
+
+      </div>
+<nav class="navbar navbar-inverse">
+  <div class="container-fluid">
+    <ul class="nav navbar-nav">
+      <li><a href="{{ path('hdv_main_homepage') }}">Accueil</a></li>
+      <li><a href="{{ path('hdv_main_news_all') }}">Actualités</a></li>
+      <li><a href="{{ path('hdv_ventes_homepage') }}">Calendrier</a></li>
+      <li><a href="{{ path('hdv_ventes_old') }}">Ventes passées</a></li>
+      <li class="dropdown">
+        <a class="dropdown-toggle" data-toggle="dropdown" href="#">Acheter / Vendre
+        <span class="caret"></span></a>
+        <ul class="dropdown-menu">
+          <li><a href="{{ path('hdv_main_pages', { 'slug': 'acheter' }) }}">Acheter</a></li>
+          <li><a href="{{ path('hdv_main_pages', { 'slug': 'vendre' }) }}">Vendre</a></li>
+          <li><a href="{{ path('hdv_main_estimate') }}">Estimation en ligne</a></li>
+        </ul>
+      </li>
+    </ul>
+
+{% if is_granted("IS_AUTHENTICATED_REMEMBERED") %}
+     <ul class="nav navbar-nav navbar-right">
+    <li><a href="{{ path('fos_user_profile_show') }}"><span class="glyphicon glyphicon-user"></span> Bonjour {{ app.user.gender }} {{ app.user.firstname }}</a></li>
+	<li><a href="{{ path('fos_user_security_logout') }}"><span class="glyphicon glyphicon-log-in"></span> Déconnexion</a></li>
+	 </ul>
+{% else %}
+         <ul class="nav navbar-nav navbar-right">
+      <li><a href="{{ path('fos_user_registration_register') }}"><span class="glyphicon glyphicon-user"></span> Inscription</a></li>
+      <li><a href="{{ path('fos_user_security_login') }}"><span class="glyphicon glyphicon-log-in"></span> Connexion</a></li>
+    </ul>
+{% endif %}
+
+  </div>
+</nav>
+{# On affiche les messages flash que définissent les contrôleurs du bundle #}
+{% for key, messages in app.session.flashbag.all() %}
+  {% for message in messages %}
+    <div class="alert alert-{{ key }}">
+      {{ message|trans({}, 'FOSUserBundle') }}
+    </div>
+  {% endfor %}
+{% endfor %}
+        {% block body %}
+        {% endblock %}
+      <footer class="footer">
+        <p>&copy; 2017 - Goxe & Belaïsch</p>
+      </footer>
+
+    </div>
+
+  {% javascripts 'bundles/js/jquery.dataTables.min.js' %}
+    <script type="text/javascript" src="{{ asset_url }}"></script>
+  {% endjavascripts %}
+
+  {% javascripts 'bundles/js/dataTables.bootstrap.min.js' %}
+    <script type="text/javascript" src="{{ asset_url }}"></script>
+  {% endjavascripts %}
+
+  {% block footer %}
+  {% endblock %}
+  </body>
+</html>

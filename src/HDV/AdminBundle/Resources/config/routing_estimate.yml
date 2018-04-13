@@ -1,0 +1,15 @@
+hdv_admin_estimate_home:
+    path:     /estimate
+    defaults: { _controller: HDVAdminBundle:Estimate:index }
+
+hdv_admin_estimate_answer:
+    path:     /estimate/answer/{estimate}
+    defaults: { _controller: HDVAdminBundle:Estimate:answer }
+
+hdv_admin_estimate_manualanswer:
+    path:     /estimate/manualanswer/{estimate}
+    defaults: { _controller: HDVAdminBundle:Estimate:answermanual }
+
+hdv_admin_estimate_delete:
+    path:     /estimate/delete/{estimate}
+    defaults: { _controller: HDVAdminBundle:Estimate:delete }

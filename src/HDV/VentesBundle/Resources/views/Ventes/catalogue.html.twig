@@ -1,0 +1,377 @@
+{% set Datedujour = date('now') %}
+<!doctype html>
+<html>
+<head>
+	<meta content="text/html; charset=utf-8" http-equiv="Content-Type">
+
+    <!-- viewport -->
+    <meta content="width=device-width,initial-scale=1" name="viewport">
+
+    <!-- title -->
+    <title>Catalogue</title>
+
+
+    {% stylesheets filter='cssrewrite' 'bundles/css/cat/*' %}
+     <link rel="stylesheet" href="{{ asset_url }}" type="text/css" />
+   {% endstylesheets %}
+	 {% javascripts 'bundles/adminjs/jquery-2.2.3.min.js' %}
+    <script type="text/javascript" src="{{ asset_url }}"></script>
+   {% endjavascripts %}
+	<link type="text/css" rel="stylesheet" href="http://fonts.googleapis.com/css?family=Raleway">
+	{% stylesheets filter='cssrewrite' 'bundles/css/jquery.fancybox.min.css' %}
+	 <link rel="stylesheet" href="{{ asset_url }}" type="text/css" />
+	{% endstylesheets %}
+
+
+{% javascripts 'bundles/js/cat/turn.js' %}
+ <script type="text/javascript" src="{{ asset_url }}"></script>
+{% endjavascripts %}
+{% javascripts 'bundles/js/cat/jquery.fullscreen.js' %}
+ <script type="text/javascript" src="{{ asset_url }}"></script>
+{% endjavascripts %}
+{% javascripts 'bundles/js/cat/jquery.address-1.6.min.js' %}
+ <script type="text/javascript" src="{{ asset_url }}"></script>
+{% endjavascripts %}
+{% javascripts 'bundles/js/cat/wait.js' %}
+ <script type="text/javascript" src="{{ asset_url }}"></script>
+{% endjavascripts %}
+{% javascripts 'bundles/js/cat/onload.js' %}
+ <script type="text/javascript" src="{{ asset_url }}"></script>
+{% endjavascripts %}
+{% javascripts 'bundles/js/jquery.fancybox.min.js' %}
+  <script type="text/javascript" src="{{ asset_url }}"></script>
+{% endjavascripts %}
+
+<style>
+.fancybox-content {
+      border-radius: 5px;
+      border-top: 3px solid #bc3031;
+      padding: 10px;
+}
+</style>
+
+	</head>
+
+<body>
+
+
+<!-- BEGIN FLIPBOOK STRUCTURE -->
+<div id="fb5-ajax">
+
+      <!-- BEGIN HTML BOOK -->
+      <div data-current="book5" class="fb5" id="fb5" >
+
+            <!-- PRELOADER -->
+            <div class="fb5-preloader">
+            <div id="wBall_1" class="wBall">
+            <div class="wInnerBall">
+            </div>
+            </div>
+            <div id="wBall_2" class="wBall">
+            <div class="wInnerBall">
+            </div>
+            </div>
+            <div id="wBall_3" class="wBall">
+            <div class="wInnerBall">
+            </div>
+            </div>
+            <div id="wBall_4" class="wBall">
+            <div class="wInnerBall">
+            </div>
+            </div>
+            <div id="wBall_5" class="wBall">
+            <div class="wInnerBall">
+            </div>
+            </div>
+            </div>
+
+            <!-- BACK BUTTON -->
+            <a href="{{ path('hdv_main_homepage') }}" id="fb5-button-back">Retour</a>
+
+            <!-- BACKGROUND FOR BOOK -->
+            <div class="fb5-bcg-book"></div>
+
+            <!-- BEGIN CONTAINER BOOK -->
+            <div id="fb5-container-book">
+
+                <!-- BEGIN deep linking -->
+                <section id="fb5-deeplinking">
+                     <ul>
+                       {% set ind = listObjects|length %}
+                       {% for objects in listObjects %}
+
+
+                      <li data-address="page{{ objects.ordre }}" data-page="{{ objects.ordre }}"></li>
+
+                       {% endfor %}
+                         <li data-address="end" data-page="{{ ind//2+1 }}"></li>
+                     </ul>
+                 </section>
+                <!-- END deep linking -->
+
+
+                <!-- BEGIN ABOUT -->
+                <section id="fb5-about" style="background-color: rgba(150, 150, 150, 0.5); padding:15px;color:black;border-radius: 10px;" class="hard">
+                <h1><span style="font-size:38px;">•••</span> {{ vente.title }} <h2>le {{ vente.date|localizeddate('long', 'short', 'fr') }}</h2></h1><hr>
+<div style="overflow:auto;width:100%;height:500px">
+        <p>&nbsp;</p>
+        <h1>Description :</h1>
+        <p>{{ vente.description|raw }}</p>
+        <h1>Conditions de vente :</h1>
+        <p>{{ vente.conditions|raw }}</p>
+</div>
+                </section>
+                <!-- END ABOUT -->
+
+
+                <!-- BEGIN BOOK -->
+                <div id="fb5-book" style="box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);border: 1px solid lightgray;">
+
+
+                <!-- BEGIN PAGE 1-->
+                <div data-background-image="" class="" style="background-color: white;">
+
+                     <!-- begin container page book -->
+                     <div class="fb5-cont-page-book">
+
+                                    <!-- description for page  -->
+                                    <div class="fb5-page-book">
+                                       <div id="fb5-cover">
+
+                                         {% if vente.image is not null %}
+                                           <img src="{{ asset(vente.image.webPath) | imagine_filter('couverturecat') }}"  style="max-height:670px;" alt="{{ vente.image.alt }}" onError="ImageLoadFailed()"/>
+                                         {% endif %}
+
+                                      </div>
+                                   </div>
+                                   <!-- end description for page  -->
+
+                                  <!-- number page and title -->
+                                  <div class="fb5-meta">
+                                        <span class="fb5-description"><span style="font-size:15px;color:#bc3031;">•••</span> {{ vente.title }}</span>
+                                        <span class="fb5-num"></span>
+                                  </div>
+                                  <!-- end number page and title  -->
+                      </div>
+                      <!-- end container page book -->
+
+                </div>
+                <!-- END PAGE 1 -->
+
+
+                {% for objects in listObjects %}
+                <!-- BEGIN PAGE -->
+
+                 {% if loop.index0  is even %}
+               <div data-background-image="" class="" style="background-color: white;">
+                 <!-- begin container page book -->
+                 <div class="fb5-cont-page-book">
+
+                     <!-- description for page from  -->
+                    <div class="fb5-page-book">
+              {% endif %}
+      {% if loop.index0  is even %}
+<div style="height:300px;width:45%;float:left;position: relative;min-height: 45%;">
+               {% if objects.image is not null %}
+
+                <a href="javascript:imgcat('{{ asset('bundles/images/ventes/'~objects.codevac~'/'~ objects.image) }}','1200','800')">
+               <img src="{{ asset('hdv/web/bundles/images/ventes/'~objects.codevac~'/'~ objects.image) | imagine_filter('lotmoyen') }}" style="max-width:200px;max-height:265px;" align="center"/></a>
+               {% endif %}
+</div>
+
+<div style="overflow:auto;width:55%height:300px;position: relative;min-height: 45%;">
+<div style="overflow:auto;width:100%;height:240px">
+             <span style="font-size:15px;color:#bc3031;font-weight:bold;"><b>• Lot n°{{ objects.ordre }}{% if objects.ordrebis is defined %} {{ objects.ordrebis }}{% endif %}</b></span><br/><br/> {{ objects.description }}<br/><br/>
+            <strong> {{ objects.estimbasse }} € / {{ objects.estimhaute }} € </strong><br/>
+             <div style="position: absolute; bottom: 30px;">
+             <a data-fancybox data-type="iframe" data-src="{{ path('hdv_ventes_enquiry_form', {'id': objects.id}) }}" href="javascript:;" id="fb5-button-t">Renseignements</a>
+						 <a data-fancybox data-type="iframe" data-src="{{ path('hdv_ventes_object_ordre_cat', {'objectcat': objects.id}) }}" href="javascript:;" id="fb5-button-t" {% if Datedujour > vente.date %} style="display: none;"{% endif %}>Laisser un ordre</a>
+					 </div>
+</div>
+</div>
+{% else %}
+<br/><br/>
+<div style="height:300px;width:55%;float:left;min-height: 45%;">
+	<div style="overflow:auto;width:100%;height:240px">
+  <span style="font-size:15px;color:#bc3031;font-weight:bold;"><b>• Lot n°{{ objects.ordre }}{% if objects.ordrebis is defined %} {{ objects.ordrebis }}{% endif %}</b></span><br/><br/> {{ objects.description }}<br/><br/>
+  <strong> {{ objects.estimbasse }} € / {{ objects.estimhaute }} € </strong><br/>
+  <div style="position: absolute; bottom: 30px;">
+		<a data-fancybox data-type="iframe" data-src="{{ path('hdv_ventes_enquiry_form', {'id': objects.id}) }}" href="javascript:;" id="fb5-button-t">Renseignements</a>
+		<a data-fancybox data-type="iframe" data-src="{{ path('hdv_ventes_object_ordre_cat', {'objectcat': objects.id}) }}" href="javascript:;" id="fb5-button-t" {% if Datedujour > vente.date %} style="display: none;"{% endif %}>Laisser un ordre</a>
+</div>
+</div>
+</div>
+
+<div style="height:300px;min-height: 45%;">
+
+  {% if objects.image is not null %}
+
+   <a href="javascript:imgcat('{{ asset('bundles/images/ventes/'~objects.codevac~'/'~ objects.image) }}','1200','800')">
+  <img src="{{ asset('hdv/web/bundles/images/ventes/'~objects.codevac~'/'~ objects.image) | imagine_filter('lotmoyen') }}" style="max-width:200px;max-height:265px;margin-left:18px;" align="center"/></a>
+  {% endif %}
+
+</div>
+<div style="clear:both"></div>
+
+{% endif %}
+ {% if loop.index0  is odd %}
+           </div>
+           <!-- number page and title for page -->
+           <div class="fb5-meta">
+                   <span class="fb5-num"><span style="font-size:15px;color:#bc3031;">•••</span> {{ objects.ordre }}</span>
+                   <span class="fb5-description">{{ vente.title }}</span>
+           </div><!-- END number page and title for page -->
+
+
+        </div> <!-- end container page book -->
+
+   </div>
+     {% endif %}
+     {% if loop.last == true %}
+               </div>
+               <!-- number page and title for page -->
+               <div class="fb5-meta">
+                       <span class="fb5-num"><span style="font-size:15px;color:#bc3031;">•••</span> {{ objects.ordre }}</span>
+                       <span class="fb5-description">{{ vente.title }}</span>
+               </div><!-- END number page and title for page -->
+
+
+            </div> <!-- end container page book -->
+
+       </div>
+         {% endif %}
+   <!-- END PAGE 2 -->
+             {% endfor %}
+
+          </div>
+              <!-- END BOOK -->
+
+
+              <!-- arrows -->
+              <a class="fb5-nav-arrow prev"></a>
+              <a class="fb5-nav-arrow next"></a>
+
+
+             </div>
+             <!-- END CONTAINER BOOK -->
+
+             <!-- BEGIN FOOTER -->
+             <div id="fb5-footer">
+
+             <div class="fb5-bcg-tools"></div>
+
+             <a id="fb5-logo" target="_blank">
+               {% image 'bundles/logo.png' %}
+                   <img src="{{ asset_url }}" />
+               {% endimage %}
+             </a>
+
+             <div class="fb5-menu" id="fb5-center">
+                 <ul>
+                     <!-- icon_zoom_in -->
+                     <li>
+                         <a title="ZOOM IN" class="fb5-zoom-in"></a>
+                     </li>
+
+                     <!-- icon_zoom_out -->
+
+                     <li>
+                         <a title="ZOOM OUT " class="fb5-zoom-out"></a>
+                     </li>
+
+                     <!-- icon_zoom_original -->
+                     <li>
+                         <a title="ZOOM ORIGINAL (SCALE 1:1)" class="fb5-zoom-original"></a>
+                     </li>
+
+
+                     <!-- icon_home -->
+                     <li>
+                         <a title="PREMIERE PAGE " class="fb5-home"></a>
+                     </li>
+
+                 </ul>
+             </div>
+
+             <div class="fb5-menu" id="fb5-right">
+                 <ul>
+                     <!-- icon page manager -->
+                     <li class="fb5-goto">
+                         <label for="fb5-page-number" id="fb5-label-page-number">PAGE</label>
+                         <input type="text" id="fb5-page-number">
+                         <button type="button">GO</button>
+                     </li>
+
+
+                     <!-- icon fullscreen -->
+                     <li>
+                         <a title="FULL / NORMAL SCREEN" class="fb5-fullscreen"></a>
+                     </li>
+
+                 </ul>
+             </div>
+
+
+
+         </div>
+             <!-- END FOOTER -->
+
+
+
+
+       </div>
+       <!-- END HTML BOOK -->
+
+ </div>
+ <!-- END FLIPBOOK STRUCTURE -->
+
+     <!-- CONFIGURATION FLIPBOOK -->
+    <script>
+    jQuery('#fb5').data('config',
+    {
+    "page_width":"550",
+    "page_height":"715",
+	"email_form":"contact@enghien-svv.com",
+    "zoom_double_click":"1",
+    "zoom_step":"0.06",
+    "double_click_enabled":"true",
+    "tooltip_visible":"true",
+    "toolbar_visible":"true",
+    "gotopage_width":"30",
+    "deeplinking_enabled":"false",
+    "rtl":"false",
+    'full_area':'true',
+	'lazy_loading_thumbs':'true',
+	'lazy_loading_pages':'true'
+});
+
+
+// $('a.ordre').fancybox({
+	//		iframe : {
+	//				preload : true,
+	//				scrolling : 'no',
+	//				css : {width : '40%',height:'60%',border:'1px solid black',padding:'20px'}
+//
+	//			},
+	//	});
+    </script>
+
+		<script type="text/javascript">
+			$(document).ready(function() {
+
+
+				$("[data-fancybox]").fancybox({
+	iframe : {
+		css : {
+			width : '50%',height:'70%'
+		}
+	}
+});
+
+				});
+
+		</script>
+
+
+</body>
+</html>

@@ -1,0 +1,36 @@
+{% extends "::layout_mail.html.twig" %}
+
+
+{% block body %}
+<h3>Demande de validation de compte de {{ user.firstname }} n° {{ user.id }} via pièce jointe</h3>
+
+{{ user.gender }} {{ user.firstname }} {{ user.lastname }}<br/>
+{{ user.address }}<br/>
+{{ user.zipcode }} {{ user.city }}<br/>
+
+Vous pouvez valider en cliquant sur ce lien : <a style="display: inline-block;
+    padding: 6px 12px;
+    margin-bottom: 0;
+    font-size: 14px;
+    font-weight: 400;
+    line-height: 1.42857143;
+    text-align: center;
+    white-space: nowrap;
+    vertical-align: middle;
+    -ms-touch-action: manipulation;
+    touch-action: manipulation;
+    cursor: pointer;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+    background-image: none;
+    border: 1px solid transparent;
+    border-radius: 4px;
+    color: #fff;
+    background-color: #337ab7;
+    border-color: #2e6da4;;" href="{{ absolute_url(path('hdv_admin_user_validate', {'userid' : user.id})) }}">Validation</a>.
+
+<br/>Hotel des ventes.
+
+{% endblock %}

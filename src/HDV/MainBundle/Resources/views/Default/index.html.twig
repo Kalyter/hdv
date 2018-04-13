@@ -1,0 +1,49 @@
+{% extends "::layout.html.twig" %}
+{% block body %}
+
+<div class="container-fluid">
+  <div class="row">
+    <div class="col-sm-8">
+      <div class="box box-carousel1">
+        <div class="box-body carousel1">
+  <div id="myCarousel" class="carousel slide" data-ride="carousel">
+      {{ render(controller("HDVMainBundle:Default:carousel")) }}
+  </div>
+</div>
+</div>
+
+</div>
+
+  <div class="col-sm-4">
+    <div class="box box-primary">
+      <div class="box-body content">
+              <h4><span class="fa fa-fw fa-comments"></span> Nos coordonnées :</h4><hr style="margin-top:5px;margin-bottom:3px;">
+            <h5><span class="fa fa-fw fa-envelope"></span> Nos adresses :<br/><b>Hôtel des ventes d'Enghien</b><br/><small>2, rue du docteur Leray<br/>95880 Enghien-les-Bains</small><br/><br/><b>Bureau Conseils et Expertises</b><br/><small>3, boulevard Arago<br/>75013 Paris</small></h5>
+            <h5><span class="fa fa-fw fa-phone"></span> Téléphone :<br/><b>01 34 12 68 16</b><br/><small>Du mardi au vendredi de 9h00 à 12h30 et de 14h00 à 18h00</small></h5>
+            <h5><span class="fa fa-fw fa-paperclip"></span> E-mail :<br/><small>Via notre formulaire de contact ou à cette adresse :</small><br/><b>contact@enghien-svv.com</b></h5>
+
+      </div>
+    </div>
+  </div>
+</div>
+</div>
+
+<br/><br/>
+
+<div class="box box-content">
+  <div class="box-body content">
+<div class="row">
+  <div class="col-sm-8" style="padding: 15px 30px 15px 30px;">
+  <div style="height:100%;padding: 3px 10px 3px 10px;"><h3 style="text-shadow: 2px 2px 2px gray;"><span class="fa fa-fw fa-calendar"></span>  <font color=#D3AF55><b>Nos prochaines ventes :</b></font></h3><hr style="margin-top:5px;margin-bottom:10px;">
+  {{ render(controller("HDVVentesBundle:Default:menu")) }}</div>
+  </div>
+  <div class="col-sm-4" style="padding: 15px 15px 15px 15px;">
+  <div style="height:100%;padding: 3px 10px 3px 10px;"><h3 style="text-shadow: 2px 2px 2px gray;"><span class="fa fa-fw fa-newspaper-o"></span>  <font color=#D3AF55><b>Nos actualités :</b></font></h3><hr style="margin-top:5px;margin-bottom:3px;">
+  {{ render(controller("HDVMainBundle:Default:news")) }}
+  </div>
+  </div>
+</div>
+</div>
+</div>
+<br/><br/>
+{% endblock %}

@@ -1,0 +1,14 @@
+{% extends "@FOSUser/layout.html.twig" %}
+
+{% trans_default_domain 'FOSUserBundle' %}
+
+{% block fos_user_content %}
+<div class="box-header with-border">
+  <h3 class="box-title">Réinitialiser votre mot de passe :</h3>
+</div>
+<div class="box-body content">
+<p>
+{{ 'resetting.check_email'|trans({'%tokenLifetime%': tokenLifetime})|nl2br }}
+</p>
+    </div>
+{% endblock %}

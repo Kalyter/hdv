@@ -1,0 +1,12 @@
+{% trans_default_domain 'FOSUserBundle' %}
+
+{% block subject %}
+{%- autoescape false -%}
+Confirmation de votre inscription
+{%- endautoescape -%}
+{% endblock %}
+
+
+{% block body_html %}
+{% include 'HDVUserBundle:Registration:mail_content.html.twig' %}
+{% endblock %}

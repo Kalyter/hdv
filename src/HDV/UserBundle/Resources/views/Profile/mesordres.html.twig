@@ -1,0 +1,70 @@
+{% extends "@FOSUser/layout.html.twig" %}
+{% set newArray = [] %}
+{% block fos_user_content %}
+
+        <div class="box-header with-border">
+          <h3 class="box-title">Mes ordres d'achat</h3>
+        </div>
+  <div class="box-body content">
+
+    <table id="table_id" class="table table-striped">
+        <thead>
+            <tr>
+                <th style="width:15%">Illustration</th>
+                <th style="width:40%">Description</th>
+                <th style="width:15%">Estimation</th>
+                <th style="width:15%">Type</th>
+                <th style="width:15%">Status</th>
+            </tr>
+        </thead>
+        <tbody>
+
+    {% for ordres in listOrdres %}
+    {% if ordres.codevac.id not in newArray %}
+  <tr><td colspan="5" style="background-color: rgba(13, 88, 142, 0.2);background-image: repeating-linear-gradient(45deg, transparent, transparent 35px, rgba(255,255,255,.5) 35px, rgba(255,255,255,.5) 70px);">
+  <b>Vente du {{ ordres.codevac.date|localizeddate('medium', 'none', 'fr') }} -- {{ ordres.codevac.title }}</b> </td>  </tr>
+ {% set newArray = newArray|merge([ordres.codevac.id]) %}
+ {% endif %}
+    <tr>
+        <td>
+        {% if ordres.object.image is not null %}
+        <a href="javascript:imgcat('{{ asset('bundles/images/ventes/'~ordres.codevac~'/'~ ordres.object.image) }}','1200','800')">
+       <img src="{{ asset('bundles/images/ventes/'~ordres.codevac~'/'~ ordres.object.image) }}" onError="ImageLoadFailed()" class="img-sensible" align="center"/></a>
+        {% endif %}
+</td>
+<td>Lot n°<b>{{ ordres.object.ordre }}{% if ordres.object.ordrebis is defined %} {{ ordres.object.ordrebis }}{% endif %}</b> - {{ ordres.object.description }}</td>
+<td>{{ ordres.object.estimbasse }} € / {{ ordres.object.estimhaute }} €</td>
+<td>
+
+<b>{{ ordres.type }}<br/>{% if ordres.montant is not null %}{{ ordres.montant }} €{% endif %}</b>
+
+</td>
+
+<td>{% if ordres.validate == 1 %}Validé{% else %}En attente...{% endif %} </td>
+
+
+
+</tr>
+
+    {% else %}
+    <tr><td colspan="5" style="background-color: rgba(13, 88, 142, 0.2);background-image: repeating-linear-gradient(45deg, transparent, transparent 35px, rgba(255,255,255,.5) 35px, rgba(255,255,255,.5) 70px);">
+    <b>Vous n'avez pas encore laissé d'ordres d'achat</b> </td>  </tr>
+    {% endfor %}
+
+    </tbody>
+</table>
+<br/>
+<ul class="pagination">
+  {# On utilise la fonction range(a, b) qui crée un tableau de valeurs entre a et b #}
+  {% for p in range(1, nbPages) %}
+  {% if p == 0 %}
+  {% else %}
+    <li{% if p == page %} class="active"{% endif %}>
+      <a href="{{ path('fos_user_profile_ordres', {'page': p}) }}">{{ p }}</a>
+    </li>
+    {% endif %}
+  {% endfor %}
+</ul>
+</div>
+
+{% endblock %}

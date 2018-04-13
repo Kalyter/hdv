@@ -1,0 +1,29 @@
+
+
+  {% for ventes in listVentes %}
+  <div class="row news">
+    <div class="col-md-6">
+    {% if ventes.image is not null %}
+      <img style="border: 1px solid black;" src="{{ asset(ventes.image.webPath) | imagine_filter('couverture') }}" alt="{{ ventes.image.alt }}">
+      {% else %}
+      <img style="max-height:160px;border: 1px solid black;" src="{{ asset("bundles/images/couv/sans.jpg") }}" alt="sans">
+    {% endif %}
+    </div>
+  <div class="col-md-6" style="padding:10px;text-align:center;">
+        <div style="text-align:center;">
+         {% if ventes.objects|length > 1 %}
+          <a class="btn btn-news btn-xxs" href="{{ path('hdv_ventes_view', {'id': ventes.id}) }}"><i class="fa fa-fw  fa-list" style="font-size: 15px"></i><br/>Lots</a><br/>
+          {% endif %}
+          <a class="btn btn-news btn-xxs" href="{{ path('hdv_ventes_plus', {'id': ventes.id}) }}"><i class="fa fa-fw fa-info-circle" style="font-size: 15px"></i><br/>Informations</a><br/>
+          {% if ventes.catpublished == 1 %}
+          <a class="btn btn-news btn-xxs" href="{{ path('hdv_ventes_catalogue', {'id': ventes.id}) }}"><i class="fa fa-fw fa-book" style="font-size: 15px"></i><br/>Catalogue</a><br/>
+          {% endif %}
+          {% if ventes.liveurl|length > 1 %}
+           <a class="btn btn-news btn-xxs" href=">{{ ventes.liveurl }}"><i class="icon-live" style="font-size: 15px"></i><br/>Enchérir en live</a>
+           {% endif %}
+        </div>
+  </div>
+  </div>
+  <b>{{ ventes.date|localizeddate('full', 'short', 'fr')|capitalize }}</b><br/>
+  <font color=#D3AF55>{{ ventes.title }}</font><hr/>
+  {% endfor %}

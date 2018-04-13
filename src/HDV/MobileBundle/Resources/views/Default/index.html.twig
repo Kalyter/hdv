@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+
+<html>
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <title>Admin GB</title>
+
+  <meta content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no" name="viewport">
+  {% stylesheets  'bundles/css/bootstrap.min.css' %}
+   <link rel="stylesheet" href="{{ asset_url }}" type="text/css" />
+ {% endstylesheets %}
+ {% stylesheets 'bundles/css/AdminLTE.min.css' %}
+  <link rel="stylesheet" href="{{ asset_url }}" type="text/css" />
+{% endstylesheets %}
+{% stylesheets 'bundles/css/skin-blue.css' %}
+ <link rel="stylesheet" href="{{ asset_url }}" type="text/css" />
+{% endstylesheets %}
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.5.0/css/font-awesome.min.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/ionicons/2.0.1/css/ionicons.min.css">
+{% javascripts 'bundles/adminjs/jquery-2.2.3.min.js' %}
+ <script type="text/javascript" src="{{ asset_url }}"></script>
+{% endjavascripts %}
+</head>
+<body>
+
+
+<div style="width:100%;padding:50px;">
+  {% image 'bundles/logo5.jpg' %}
+      <img src="{{ asset_url }}" class="img-responsive" style="margin-left:auto;margin-right:auto;"/>
+  {% endimage %}<br/><br/>
+    <button class="btn btn-primary btn-block" type="button" id="clearInputs" >Clear</button><br/><br/>
+{{ form_start(form) }}
+{{ form_widget(form) }}
+{{ form_end(form) }}
+</div>
+<script>
+document.getElementById('clearInputs').onclick = function(event){
+var inputs = document.getElementsByTagName('input');
+for (var i=0 ; i < inputs.length ; i++){
+  if (inputs[i].type == "text"){
+      inputs[i].value = "";
+    }
+}
+}
+$( document ).ready(function() {
+  document.getElementById('hdv_mobilebundle_saisie_estb').value ="";
+  document.getElementById('hdv_mobilebundle_saisie_esth').value ="";
+  var input = document.getElementsByTagName('textarea');
+  for (var c=0 ; c < input.length ; c++){
+      input[c].value = "";
+  }
+});
+
+
+</script>
+</body>
+</html>

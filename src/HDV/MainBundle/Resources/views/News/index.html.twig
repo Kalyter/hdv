@@ -1,0 +1,94 @@
+{% extends "::layout.html.twig" %}
+{% block body %}
+
+<section class="content">
+<div class="row">
+    <div class="col-md-8">
+    <div class="box box-content">
+      <div class="box-body content">
+        <div class="box-header with-border">
+          <h3 class="box-title">Actualités</strong>
+        </div>
+  <br/>
+  <table id="table_id" class="table table-striped">
+      <thead>
+          <tr>
+              <th style="width:35%;border:0"></th>
+              <th style="width:55%;border:0"></th>
+              <th style="width:10%;border:0"></th>
+          </tr>
+      </thead>
+      <tbody>
+{% set mois = "" %}
+  {% for news in listNews %}
+  {% if mois == news.date|date("m") %}
+    {% else %}
+    <tr style="border-top: 2px solid #3c8dbc;">
+        <td colspan="3"><b>{{ news.date|localizeddate('full', 'none', 'fr', null, "MMMM YYYY")|capitalize  }}</b></td> </tr>
+    {% endif %}
+  <tr>
+      <td>Le {{ news.date|localizeddate('medium', 'short', 'fr') }} -
+
+      </td>
+
+<td><b>{{ news.title }}</b> </td>
+<td>  <a class="btn btn-primary" href="{{path('hdv_main_news_view', {'news': news.id}) }}"><span class="fa fa-lg  fa-search"></span> Voir</a></td>
+
+</tr>
+
+{% set mois = news.date|date("m") %}
+  {% else %}
+  <tr><td colspan="5" style="background-color: rgba(13, 88, 142, 0.2);background-image: repeating-linear-gradient(45deg, transparent, transparent 35px, rgba(255,255,255,.5) 35px, rgba(255,255,255,.5) 70px);">
+  <b>Vous n'avez pas fait de demandes.</b> </td>  </tr>
+  {% endfor %}
+
+  </tbody>
+</table>
+<br/>
+<ul class="pagination">
+{# On utilise la fonction range(a, b) qui crée un tableau de valeurs entre a et b #}
+{% for p in range(1, nbPages) %}
+{% if p == 0 %}
+{% else %}
+  <li{% if p == page %} class="active"{% endif %}>
+    <a href="{{ path('fos_user_profile_ordres', {'page': p}) }}">{{ p }}</a>
+  </li>
+  {% endif %}
+{% endfor %}
+</ul>
+
+</div>
+</div>
+</div>
+
+<div class="col-sm-4">
+  <div class="box box-primary">
+    <div class="box-body text-center">
+      <div class="box-header with-border">
+        <h3 class="box-title">Informations</h3>
+      </div><br/>
+      <img style="width:220px;" src="{{ asset('bundles/images/estimate.jpg') }}" alt="sans">
+  <div class="alert alert-info"><b>Vous souhaitez vendre un objet ?</b><br/><br/>C'est très simple, vous pouvez profiter de notre formulaire d'estimation gratuite en ligne en cliquant <a style="color:black;font-weight:bold;" href="{{ url('hdv_main_estimate') }}">ici</a>, ou tout simplement en nous contactant directement par téléphone ou e-mail.<br/>
+  <h5 style="text-align:left;"><span class="fa fa-fw fa-phone"></span> Téléphone :<br/><b>01 34 12 68 16</b><br/><small>Du mardi au vendredi de 9h00 à 12h30 et de 14h00 à 18h00</small></h5>
+  <h5 style="text-align:left;"><span class="fa fa-fw fa-paperclip"></span> E-mail :<br/><br/><b>contact@enghien-svv.com</b></h5></div>
+
+  <div class="alert alert-warning"><b>Vous souhaitez acheter un objet ?</b><br/><br/>
+    L’accès aux salles des ventes aux enchères est gratuit et ouvert au public.<br/>
+    L’Hôtel des Ventes d’Enghien propose chaque année aux amateurs plus de 20 000 objets et oeuvres  d'art réparties dans une cinquantaine de ventes spécialisées, cataloguées, ou ventes courantes.<br/><br/>
+    N'hésitez pas à faire un tour sur notre page <i>Acheter</i> pour en savoir plus.
+    <br/>
+
+
+  </div>
+    </div>
+  </div>
+  </div>
+</section>
+
+
+</div>
+
+  {% endblock %}
+  {% block footer %}
+
+  {% endblock %}

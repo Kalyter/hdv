@@ -1,0 +1,126 @@
+
+{% extends "HDVAdminBundle:Default:index.html.twig" %}
+{% block scripts %}
+<script type="text/javascript">
+    $(function () {
+
+        // A change sélection de fichier
+        $('#formup').find('input[type=file]').on('change', function (e) {
+            var files = $(this)[0].files;
+
+            if (files.length > 0) {
+                // On part du principe qu'il n'y qu'un seul fichier
+                // étant donné que l'on a pas renseigné l'attribut "multiple"
+                var file = files[0],
+                    $image_preview = $('#image_preview');
+
+                // Ici on injecte les informations recoltées sur le fichier pour l'utilisateur
+                $image_preview.find('.thumbnail').removeClass('hidden');
+                $image_preview.find('.btn').removeClass('hidden');
+                $image_preview.find('img').attr('src', window.URL.createObjectURL(file));
+            }
+        });
+
+        // Bouton "Annuler"
+        $('#image_preview').find('button[type="button"]').on('click', function (e) {
+            e.preventDefault();
+
+            $('#formup').find('input[name="hdv_mainbundle_news[image][file]"]').val('');
+            $('#image_preview').find('.thumbnail').addClass('hidden');
+            $('#image_preview').find('.btn').addClass('hidden');
+        });
+    });
+
+    $(".datetimepicker").datetimepicker({
+    locale: 'fr',
+    useCurrent: false,
+    sideBySide: true
+});
+
+</script>
+{% endblock %}
+{% block body %}
+
+<h2>Ajouter une actualité</h2>
+<div class="grad"></div>
+<a href="{{ path('hdv_admin_news_home') }}" class="btn btn-default"><span class="fa fa-lg  fa-arrow-left" style="margin-right:5px;"></span> Retour</a>
+<br/><br/>
+<div class="box box-primary">
+           <div class="box-header with-border">
+             <h3 class="box-title">Principal</h3>
+           </div>
+            <div class="box-body">
+{{ form_start(form, {'attr': {'id': 'formup'}}) }}
+
+
+<br/>
+  <div class="row">
+      <div class="col-md-6">
+        <div class="row">
+            <div class="col-md-8">
+        <label for="couv" class="col-sm-2 control-label" style="width: 250px">Illustration :</label>
+        <a class="btn btn-block btn-info btn-lg" style="width: 100px;margin-left:18px;">
+      <label for="{{ form.image.file.vars.id }}" style="width:100px;height:35px;float:left;"><i class="glyphicon glyphicon-save-file fa-3x"></i></label></a>
+      {% if news.image is not null %}
+            <img src="{{ asset(news.image.webPath) }}" style="max-height: 130px;margin-left:40px" onError="ImageLoadFailed()"/>
+            {% endif %}
+      {{ form_errors(form.image.file) }}
+        {{ form_widget(form.image.file, {'attr': {'class': 'inputfile'}}) }}
+      </div>
+      <div class="col-md-4">
+        <div id="image_preview" style="height:185px;">
+        <div class="thumbnail hidden">
+            <img src="http://placehold.it/5" style="max-width: 100px;" alt="">
+        </div>
+         <button type="button" class="btn btn-default btn-danger hidden">Annuler</button>
+        </div>
+        </div>
+        </div>
+      </div>
+      <div class="col-md-6">
+        <label for="{{ form.title.vars.id }}" class="col-sm-2 control-label">Titre * :</label>
+        <div class="col-sm-10">
+        {{ form_errors(form.title) }}
+        {{ form_widget(form.title, {'attr': {'class': 'form-control'}}) }}
+          </div><br/><br/>
+          <label for="{{ form.date.vars.id }}" class="col-sm-2 control-label">Date :</label>
+          <div class="col-sm-4">
+          {{ form_errors(form.date) }}
+          {{ form_widget(form.date) }}
+            </div>
+      </div>
+  </div>
+</div>
+</div><br/>
+<div class="box box-primary" style="border-top-color:#820000;">
+            <div class="box-body">
+  <div class="row" style="padding: 10px;">
+  <br/><br/>
+  <label for="{{ form.content.vars.id }}" class="col-sm-2 control-label">Contenu :</label>
+  <div class="col-sm-8">
+  {{ form_errors(form.content) }}
+  {{ form_widget(form.content) }}
+    </div>
+</div>
+  <div class="row" style="padding: 10px;">
+  <br/><br/>
+  <label for="nothing" class="col-sm-2 control-label">Bouton de publication :</label>
+  <div class="col-sm-8">
+
+  {{ form_label(form.published)  }}
+  {{ form_errors(form.published) }}
+  {{ form_widget(form.published) }}
+
+    </div>
+  </div>
+  <div class="row" style="padding: 20px;">
+         {{ form_widget(form.save, {'attr': {'class': 'btn btn-primary'}}) }}
+         </div>
+               </div>
+
+{{ form_rest(form) }}
+
+ {{ form_end(form) }}
+ </div>
+
+{% endblock %}

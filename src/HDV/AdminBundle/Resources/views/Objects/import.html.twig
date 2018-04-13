@@ -1,0 +1,35 @@
+{% extends "HDVAdminBundle:Default:index.html.twig" %}
+
+{% block body %}
+  {{ include('HDVAdminBundle:Objects:head.html.twig') }}
+
+  <br/><br/>
+  <div class="box box-primary">
+             <div class="box-header with-border">
+               <h3 class="box-title">Importer des lots</h3>
+             </div>
+              <div class="box-body">
+              {{ form_start(form, {'attr': {'id': 'formup'}}) }}
+
+              <div class="row" style="padding: 10px;">
+              <br/><br/>
+              <label for="nothing" class="col-sm-2 control-label">Fichier CSV :</label>
+              <div class="col-sm-8">
+
+              {{ form_label(form.filecsv)  }}
+              {{ form_errors(form.filecsv) }}
+              {{ form_widget(form.filecsv, {'attr': {'id': 'file'}}) }}
+
+                </div>
+              </div>
+              <div class="row" style="padding: 20px;">
+                     {{ form_widget(form.send, {'attr': {'class': 'btn btn-primary'}}) }}
+                     </div>
+                           </div>
+
+            {{ form_rest(form) }}
+
+             {{ form_end(form) }}
+
+             </div>
+{% endblock %}

@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+
+<html>
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no" name="viewport">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.5.0/css/font-awesome.min.css">
+   {% stylesheets filter='cssrewrite' 'bundles/css/site/*' %}
+    <link rel="stylesheet" href="{{ asset_url }}" type="text/css" />
+  {% endstylesheets %}
+  {% stylesheets filter='cssrewrite' 'bundles/css/fontlive.css' %}
+   <link rel="stylesheet" href="{{ asset_url }}" type="text/css" />
+  {% endstylesheets %}
+{% javascripts 'bundles/adminjs/jquery-2.2.3.min.js' %}
+ <script type="text/javascript" src="{{ asset_url }}"></script>
+{% endjavascripts %}
+</head>
+<body class="hold-transition skin-blue sidebar-mini" style="background-color:white;">
+  {% if app.session.flashBag.has('success') %}
+        <div class="alert alert-success">
+            {% for msg in app.session.flashBag.get('success') %}
+                {{ msg }}
+            {% endfor %}
+        </div>
+    {% endif %}
+  <div class="box-body">
+    <div class="box-header with-border">
+            <h3 class="box-title">Demande de renseignements - <a href="#" onclick="javascript:window.print()" class="btn btn-primary"><span class="fa fa-lg fa-print"></span> Imprimer</a></h3>
+          </div>
+
+<div style="padding:10px;">
+  {% if enquiry.user is not null %}
+<span style="color:#a52a2a;font-weight:bold;">{{ enquiry.user.gender }} {{ enquiry.user.firstname }}</span> {{ enquiry.user.lastname }} - Utilisateur inscrit<br/>
+Tel: <span style="color:#a52a2a;font-weight:bold;">{{ enquiry.user.phone }}</span> Email:  <span style="color:#a52a2a;font-weight:bold;">{{ enquiry.user.email }}<br/></span>
+{% else %}
+<span style="color:#a52a2a;font-weight:bold;">{{ enquiry.nom }}</span><br/>
+Tel: <span style="color:#a52a2a;font-weight:bold;">{{ enquiry.tel }}</span> Email:  <span style="color:#a52a2a;font-weight:bold;">{{ enquiry.mail }}<br/></span>
+{% endif %}
+<br/><br/>
+  {{ enquiry.message }}
+</div>
+  </div>
+    </div>
+  </body>
+  </html>

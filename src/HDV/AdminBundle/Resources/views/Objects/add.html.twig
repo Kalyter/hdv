@@ -1,0 +1,107 @@
+{% extends "HDVAdminBundle:Default:index.html.twig" %}
+
+{% block body %}
+
+  {{ include('HDVAdminBundle:Objects:head.html.twig') }}
+
+<br/><br/>
+
+{{ form_start(form, {'attr': {'id': 'formup'}}) }}
+
+<div class="box box-primary" style="border-top-color:#820000;">
+             <div class="box-header with-border">
+               <h3 class="box-title">Ajout d'un lot</h3>
+             </div>
+            <div class="box-body">
+              <div class="alert alert-warning">
+                <strong>Information.</strong> La gestion des photos pour le lot sera disponible une fois la création de l'objet terminée.
+              </div>
+                <div class="box-footer" style="border:0"><br/>
+              <label for="{{ form.codedossier.vars.id }}" class="col-sm-2 control-label">Code dossier (Ivoire) :</label>
+              <div class="col-sm-8">
+              {{ form_errors(form.codedossier) }}
+              {{ form_widget(form.codedossier) }}
+               <div class="vendeur"></div>
+                </div>
+            </div><br/>
+            <div class="box-footer"><br/>
+
+            <label for="{{ form.ordre.vars.id }}" class="col-sm-2 control-label">Ordre de passage :</label>
+            <div class="col-sm-4">
+            {{ form_errors(form.ordre) }}
+            {{ form_widget(form.ordre) }}
+              </div>
+          <label for="{{ form.ordrebis.vars.id }}" class="col-sm-2 control-label">Bis (optional) :<br/><small>Ex: A, B, 1, 2</small></label>
+          <div class="col-sm-4">
+          {{ form_errors(form.ordrebis) }}
+          {{ form_widget(form.ordrebis) }}
+            </div>
+        </div><br/>
+        <div class="box-footer"><br/>
+        <label for="{{ form.description.vars.id }}" class="col-sm-2 control-label">Description :</label>
+        <div class="col-sm-8">
+        {{ form_errors(form.description) }}
+        {{ form_widget(form.description) }}
+          </div>
+      </div><br/>
+      <div class="box-footer"><br/>
+
+      <label for="{{ form.estimbasse.vars.id }}" class="col-sm-2 control-label">Estimation basse :</label>
+      <div class="col-sm-4">
+      {{ form_errors(form.estimbasse) }}
+      {{ form_widget(form.estimbasse) }}
+        </div>
+    <label for="{{ form.estimhaute.vars.id }}" class="col-sm-2 control-label">Estimation haute :<br/></label>
+    <div class="col-sm-4">
+    {{ form_errors(form.estimhaute) }}
+    {{ form_widget(form.estimhaute) }}
+      </div>
+  </div><br/>
+  <div class="box-footer"><br/>
+  <label for="{{ form.famille.vars.id }}" class="col-sm-2 control-label">Famille :</label>
+  <div class="col-sm-8">
+  {{ form_errors(form.famille) }}
+  {{ form_widget(form.famille) }}
+    </div>
+</div><br/>
+<div class="box-footer"><br/>
+{{ form_widget(form.save, { 'label': 'Enregistrer' }) }}
+{{ form_rest(form) }}
+</div>
+
+
+ {{ form_end(form) }}
+ </div>
+</div>
+
+{% endblock %}
+{% block scripts %}
+<script src="{{ asset('bundles/fosjsrouting/js/router.js') }}"></script>
+<script src="{{ path('fos_js_routing_js', {"callback": "fos.Router.setData"}) }}"></script>
+<script>
+
+$("document").ready(function() {
+
+  $(".dossier").change(function() {
+    var doss = $(".dossier").val();
+    if (doss == "")
+    {
+      doss = 0;
+    }
+    var path = Routing.generate('hdv_admin_objects_reqdossier', { dossier: doss });
+
+    $.ajax({
+      type: 'get',
+      url: path,
+      beforeSend: function() {
+        $("form .dossier").parent().append('<div class="loading"></div>');
+      },
+      success: function(data) {
+        $(".vendeur").html(data.nom);
+        $(".loading").remove();
+      }
+    });
+  });
+});
+</script>
+{% endblock %}

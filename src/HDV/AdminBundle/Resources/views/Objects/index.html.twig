@@ -1,0 +1,37 @@
+{% extends "HDVAdminBundle:Default:index.html.twig" %}
+{% block java %}
+<script type="text/javascript">
+$("[data-fancybox]").fancybox({
+  iframe : {
+      preload : true,
+      scrolling : 'no',
+      css : {width : '40%',height:'60%',border:'1px solid black',padding: '10px'}
+
+    },
+});
+
+        </script>
+{% endblock %}
+{% block body %}
+
+  {{ include('HDVAdminBundle:Objects:head.html.twig') }}
+
+<br/><br/>
+<div class="box box-content" style="border-top-color:#511a1a; padding:15px;">
+  <div class="box-header with-border">
+          <h3 class="box-title">Liste des lots</h3>
+        </div><br/>
+{{ datatable({
+     'id' : 'd21',
+      'js' : {
+          'ajax' : path('hdv_admin_objects_vente_grid',{ 'id' : vente.id }),
+    'columnDefs': [
+              { "width": "8%", "targets": 1 },
+              { "width": "60%", "targets": 2 },
+          ]
+      }
+  })
+}}
+</div>
+</div>
+{% endblock %}

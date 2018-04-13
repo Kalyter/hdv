@@ -1,0 +1,212 @@
+<!DOCTYPE html>
+
+<html>
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <title>Admin GB</title>
+
+  <meta content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no" name="viewport">
+  {% stylesheets  'bundles/css/bootstrap.min.css' %}
+   <link rel="stylesheet" href="{{ asset_url }}" type="text/css" />
+ {% endstylesheets %}
+ {% stylesheets 'bundles/css/AdminLTE.min.css' %}
+  <link rel="stylesheet" href="{{ asset_url }}" type="text/css" />
+{% endstylesheets %}
+{% stylesheets 'bundles/css/skin-blue.css' %}
+ <link rel="stylesheet" href="{{ asset_url }}" type="text/css" />
+{% endstylesheets %}
+{% stylesheets 'bundles/css/blue.css' %}
+ <link rel="stylesheet" href="{{ asset_url }}" type="text/css" />
+{% endstylesheets %}
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.5.0/css/font-awesome.min.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/ionicons/2.0.1/css/ionicons.min.css">
+  	<link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/select/1.2.2/css/select.dataTables.min.css">
+  {% stylesheets filter='cssrewrite' 'bundles/css/bootstrap-datetimepicker-stand.css' %}
+   <link rel="stylesheet" href="{{ asset_url }}" type="text/css" />
+  {% endstylesheets %}
+{% stylesheets filter='cssrewrite' 'bundles/css/bootstrap-datetimepicker.min.css' %}
+ <link rel="stylesheet" href="{{ asset_url }}" type="text/css" />
+{% endstylesheets %}
+{% stylesheets filter='cssrewrite' 'bundles/css/site/dataTables.bootstrap.min.css' %}
+ <link rel="stylesheet" href="{{ asset_url }}" type="text/css" />
+{% endstylesheets %}
+
+{% stylesheets filter='cssrewrite' 'bundles/css/site/jquery.fancybox.min.css' %}
+ <link rel="stylesheet" href="{{ asset_url }}" type="text/css" />
+{% endstylesheets %}
+  <!--[if lt IE 9]>
+  <script src="https://oss.maxcdn.com/html5shiv/3.7.3/html5shiv.min.js"></script>
+  <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
+  <![endif]-->
+  {% javascripts 'bundles/adminjs/jquery-2.2.3.min.js' %}
+   <script type="text/javascript" src="{{ asset_url }}"></script>
+  {% endjavascripts %}
+  {% javascripts 'bundles/js/jquery.dataTables.min.js' %}
+    <script type="text/javascript" src="{{ asset_url }}"></script>
+  {% endjavascripts %}
+  {% javascripts 'bundles/js/jquery.fancybox.min.js' %}
+    <script type="text/javascript" src="{{ asset_url }}"></script>
+  {% endjavascripts %}
+  {% javascripts 'bundles/js/dataTables.bootstrap.min.js' %}
+    <script type="text/javascript" src="{{ asset_url }}"></script>
+  {% endjavascripts %}
+  <script type="text/javascript" language="javascript" src="https://cdn.datatables.net/select/1.2.2/js/dataTables.select.min.js">
+  	</script>
+  {% block java %}
+    {% endblock %}
+    <style>
+    body{font-family:'Source Sans Pro','Helvetica Neue',Helvetica,Arial,sans-serif;font-weight:400;overflow-x:hidden;overflow-y:auto}
+    </style>
+</head>
+{% set route = app.request.get('_route') %}
+<body class="hold-transition skin-blue sidebar-mini">
+<div class="wrapper">
+
+  <!-- Main Header -->
+  <header class="main-header">
+
+    <!-- Logo -->
+    <a href="index2.html" class="logo">
+      <!-- mini logo for sidebar mini 50x50 pixels -->
+      <span class="logo-mini"><b>i</b>G<b>l</b>B</span>
+      <!-- logo for regular state and mobile devices -->
+      <span class="logo-lg">Goxe & Belaisch</span>
+    </a>
+
+    <!-- Header Navbar -->
+    <nav class="navbar navbar-static-top" role="navigation">
+      <!-- Sidebar toggle button-->
+      <a href="#" class="sidebar-toggle" data-toggle="offcanvas" role="button">
+        <span class="sr-only">Toggle navigation</span>
+      </a>
+      <!-- Navbar Right Menu -->
+      <div class="navbar-custom-menu">
+        <ul class="nav navbar-nav">
+          <li>
+            <a href="#" data-toggle="control-sidebar"><i class="fa fa-gears"></i></a>
+          </li>
+        </ul>
+      </div>
+    </nav>
+  </header>
+  <!-- Left side column. contains the logo and sidebar -->
+  <aside class="main-sidebar">
+
+    <!-- sidebar: style can be found in sidebar.less -->
+    <section class="sidebar">
+
+      <!-- Sidebar Menu -->
+      <ul class="sidebar-menu">
+        <li class="header">Menu Principal</li>
+        <!-- Optionally, you can add icons to the links -->
+        <li><a href="{{ path('hdv_admin_home') }}"><i class="fa fa-link"></i> <span>Tableau de bord</span></a></li>
+        <li class="treeview {{ 'vente' in route ? 'active' }}">
+          <a href="#"><i class="fa fa-calendar"></i> <span>Ventes</span>
+            <span class="pull-right-container">
+              <i class="fa fa-angle-left pull-right"></i>
+            </span>
+          </a>
+          <ul class="treeview-menu">
+            <li><a href="{{ path('hdv_admin_ventes_home',{ 'period' : 'futur' }) }}">Ventes futures</a></li>
+            <li><a href="{{ path('hdv_admin_ventes_home',{ 'period' : 'old' }) }}">Ventes passées</a></li>
+          </ul>
+        </li>
+        <li class="treeview {{ 'ordres' in route ? 'active' }}">
+          <a href="#"><i class="fa fa-sticky-note"></i> <span>Ordres d'achat</span>
+            <span class="pull-right-container">
+              <i class="fa fa-angle-left pull-right"></i>
+            </span>
+          </a>
+          <ul class="treeview-menu">
+            <li {{ 'futur' in route ? 'class="active"' }}><a href="{{ path('hdv_admin_ordres_futur') }}">Ordres des ventes futures</a></li>
+            <li {{ 'old' in route ? 'class="active"' }}><a href="{{ path('hdv_admin_ordres_old') }}">Ordres des ventes passées</a></li>
+          </ul>
+        </li>
+        <li {{ 'estimate' in route ? 'class="active"' }}><a href="{{ path('hdv_admin_estimate_home') }}"><i class="fa fa-search"></i> <span>Estimations</span></a></li>
+        <li class="treeview {{ 'enquiry' in route ? 'active' }}">
+          <a href="#"><i class="fa fa-question"></i> <span>Renseignements</span>
+            <span class="pull-right-container">
+              <i class="fa fa-angle-left pull-right"></i>
+            </span>
+          </a>
+          <ul class="treeview-menu">
+            <li {{ 'enquiry' in route ? 'class="active"' }}><a href="{{ path('hdv_admin_enquiry_index') }}">Liste des demandes</a></li>
+          </ul>
+        </li>
+        <li {{ 'news' in route ? 'class="active"' }}><a href="{{ path('hdv_admin_news_home') }}"><i class="fa fa-newspaper-o"></i> <span>Actualités</span></a></li>
+        <li class="treeview">
+          <a href="#"><i class="fa fa-user"></i> <span>Utilisateurs</span>
+            <span class="pull-right-container">
+              <i class="fa fa-angle-left pull-right"></i>
+            </span>
+          </a>
+          <ul class="treeview-menu">
+            <li><a href="#">Validés</a></li>
+            <li><a href="#">En attente de validation</a></li>
+            <li><a href="#">Tous</a></li>
+          </ul>
+        </li>
+      </ul>
+      <!-- /.sidebar-menu -->
+    </section>
+    <!-- /.sidebar -->
+  </aside>
+
+  <!-- Content Wrapper. Contains page content -->
+  <div class="content-wrapper">
+    <!-- Content Header (Page header) -->
+
+
+    <section class="content-header">
+
+    </section>
+
+    <!-- Main content -->
+    <section class="content" style="padding-left:30px;">
+    {% if app.session.flashBag.has('success') %}
+          <div class="alert alert-success">
+              {% for msg in app.session.flashBag.get('success') %}
+                  {{ msg }}
+              {% endfor %}
+          </div>
+      {% endif %}
+      {% block body %}
+        {% endblock %}
+    </section>
+    <!-- /.content -->
+  </div>
+  <!-- /.content-wrapper -->
+
+  <!-- Main Footer -->
+  <footer class="main-footer">
+    <!-- To the right -->
+    <div class="pull-right hidden-xs">
+      Anything you want
+    </div>
+    <!-- Default to the left -->
+    <strong>Copyright &copy; 2016 <a href="#">Company</a>.</strong> All rights reserved.
+  </footer>
+
+</div>
+<!-- ./wrapper -->
+
+<!-- REQUIRED JS SCRIPTS -->
+
+
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.10.6/moment-with-locales.min.js"></script>
+{% javascripts 'bundles/adminjs/bootstrap.min.js' %}
+ <script type="text/javascript" src="{{ asset_url }}"></script>
+{% endjavascripts %}
+{% javascripts 'bundles/adminjs/icheck.min.js' %}
+ <script type="text/javascript" src="{{ asset_url }}"></script>
+{% endjavascripts %}
+{% javascripts 'bundles/adminjs/app.min.js' %}
+ <script type="text/javascript" src="{{ asset_url }}"></script>
+{% endjavascripts %}
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-datetimepicker/4.17.37/js/bootstrap-datetimepicker.min.js"></script>
+
+        {% block scripts %}
+        {% endblock %}
+</body>
+</html>

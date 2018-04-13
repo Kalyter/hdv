@@ -1,0 +1,89 @@
+{% extends "::layout.html.twig" %}
+
+
+{% block body %}
+
+
+  {# On affiche les messages flash que définissent les contrôleurs du bundle #}
+  {% for key, messages in app.session.flashbag.all() %}
+    {% for message in messages %}
+      <div class="alert alert-{{ key }}">
+        {{ message|trans({}, 'FOSUserBundle') }}
+      </div>
+    {% endfor %}
+  {% endfor %}
+    {% if is_granted("IS_AUTHENTICATED_REMEMBERED") %}
+    <section class="content">
+    <div class="row">
+      <div class="col-md-4">
+      <div class="box box-primary">
+        <div class="box-body">
+          <a href="{{ path('fos_user_profile_show') }}"><img src="{{ asset('bundles/images/profil.jpg') }}" class="profile-user-img img-responsive img-circle"></a>
+          <h3 class="profile-username text-center">{{ app.user.gender }} {{ app.user.firstname }} {{ app.user.lastname }}</h3>
+          <p class="validate text-center">Compte : {% if app.user.validate == 0 %}Non validé{% elseif app.user.validate == 1 %}En attente de pièce{% elseif app.user.validate == 2 %}En attente de validation{% else %}Validé{% endif %}</p>
+            <div class="list-group">
+              <a href="{{ path('fos_user_profile_coord')}}" class="list-group-item"><i class="fa fa-fw fa-edit"></i>Modifier mes coordonnées</a>
+              <a href="{{ path('fos_user_profile_bacc')}}" class="list-group-item"><i class="fa fa-fw fa-bank"></i>Modifier mes informations bancaire</a>
+              {% if app.user.validate == 1 %}
+              <a href="{{ path('fos_user_profile_ci')}}" class="list-group-item"><i class="fa fa-fw fa-cc-amex"></i>Envoyer une copie de pièce d'identité</a>
+              {% endif %}
+              <a href="{{ path('fos_user_profile_edit')}}" class="list-group-item delete"><i class="fa fa-fw fa-lock"></i>Modifier mes identifiants</a>
+            </div>
+          </div>
+        </div>
+
+        <div class="box box-primary">
+          <div class="box-body">
+            <div class="box-header with-border">
+                    <h3 class="box-title">Votre Menu</h3>
+                  </div>
+                  <h3 class="profile-username text-center">Vos enchères</h3>
+              <div class="list-group">
+                <a href="{{ path('fos_user_profile_achats')}}" class="list-group-item"><i class="fa fa-fw fa-euro"></i>Mes achats</a>
+                <a href="{{ path('fos_user_profile_ordres')}}" class="list-group-item"><i class="fa fa-fw fa-file-text-o"></i>Mes ordres d'achats</a>
+              </div>
+              <h3 class="profile-username text-center">Vos biens</h3>
+            <div class="list-group">
+            <a href="{{ path('fos_user_profile_estims')}}" class="list-group-item"><i class="fa fa-fw fa-search"></i>Mes demandes d'estimations</a>
+            <a href="{{ path('fos_user_profile_ventes')}}" class="list-group-item"><i class="fa fa-fw fa-bar-chart"></i>Mes ventes</a>
+          </div>
+            </div>
+          </div>
+    </div>
+  {% else %}
+
+  <section class="content">
+  <div class="row">
+    <div class="col-md-4">
+
+  <div class="box box-primary">
+    <div class="box-body">
+      <div class="box-header with-border" style="padding-top:20px;">
+              <h3 class="box-title">Pourquoi s'inscrire ?</h3>
+            </div>
+            <h3 class="profile-username text-center">Vos enchères</h3>
+            <div class="alert alert-warning">
+            <strong><span class="glyphicon glyphicon-info-sign"></span>  Suite à la validation de votre compte</strong>, vous pourrez participer à nos ventes notamment en laissant des ordres d'achat.<br/>
+            Si vous êtes vendeur ou/et acheteur, vous aurez également accès à la situation de vos comptes.
+          </div>
+          <h3 class="profile-username text-center">Vos biens</h3>
+          <div class="alert alert-info">
+          <strong><span class="glyphicon glyphicon-info-sign"></span>  Besoin d'une estimation ?</strong><br/> Les demandes et le suivi de vos estimations seront disponible depuis votre compte.
+        </div>
+      </div>
+    </div>
+  </div>
+{% endif %}
+  <div class="col-md-8">
+    <div class="box box-content">
+      <div class="box-body content">
+        {# On définit ce block, dans lequel vont venir s'insérer les autres vues du bundle #}
+        {% block fos_user_content %}
+        {% endblock fos_user_content %}
+      </div>
+    </div>
+  </div>
+  </div>
+  </section>
+
+{% endblock %}

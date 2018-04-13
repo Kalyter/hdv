@@ -1,0 +1,46 @@
+{% trans_default_domain 'FOSUserBundle' %}
+
+      <div class="box-header with-border">
+              <h3 class="box-title">Votre Situation</h3>
+            </div>
+          <div class="box-body content">
+            <p class="validate text-right">Dernière connexion le {{ user.lastlogin|localizeddate('medium', 'short', 'fr') }}</p>
+            {% if user.validate == 0 %}
+            <div class="alert alert-warning">
+              <strong>Votre compte n'est pas validé</strong>, cela signifie que vous ne pouvez pas laisser d'ordre d'achat. Pour se faire, merci tout d'abord de renseigner vos informations bancaire et ensuite nous faire parvenir une copie de pièce d'idendité via le formulaire prévu.
+            </div>
+            {% elseif user.validate == 1 %}
+            <div class="alert alert-info">
+              <strong>Votre compte est de niveau 1</strong>, vous pouvez toutefois déposer des ordres d'achat, cependant nous nous réservons le droit de ne pas valider ceux-ci.
+               Une fois votre pièce d'identité renseignée et vérifiée par nos services, votre compte sera définitivement activé.
+              </div>
+              {% elseif user.validate == 2 %}
+              <div class="alert alert-info">
+                <strong>Votre compte est de niveau 2</strong>, votre pièce d'identité est en cours de vérification. Vous pouvez tout de même déposer des ordres d'achat.
+                </div>
+            {% else %}
+            <div class="alert alert-success">
+              <strong>Votre compte a été validé</strong> par nos services.
+              </div>
+            {% endif %}
+
+                        {% if user.codedossier|length > 1 %}
+                        Votre numéro de dossier est : <b>{{ user.codedossier }}</b><br/>
+                        {% else %}
+                        Votre numéro de dossier n'est pas renseigné. <a href="#" data-toggle="popover" title="Information" data-content="Si vous êtes déjà acheteur ou vendeur dans notre étude, merci de prendre contact avec nous."><i class="fa fa-fw fa-info-circle" style="font-size:18px;color:gray;"></i></a><br/>
+                        {% endif %}
+                        <br/><br/>
+            Vos coordonnées :<br/>
+            {{ user.address }}<br/>
+            {{ user.zipCode }} {{ user.city }}<br/>
+            {{ user.phone }}
+            </div>
+
+
+{% block footer %}
+<script>
+$(document).ready(function(){
+    $('[data-toggle="popover"]').popover();
+});
+</script>
+{% endblock %}

@@ -1,0 +1,144 @@
+{% extends "::layout.html.twig" %}
+{% block body %}
+
+<section class="content">
+<div class="row">
+    <div class="col-md-8">
+    <div class="box box-content">
+      <div class="box-body content">
+        <div class="box-header with-border">
+          <h3 class="box-title">Estimation en ligne</strong>
+        </div>
+  <br/>
+  <div style="padding:10px;">
+{{ form_start(form, {'attr': {'id': 'formup'}}) }}
+  {% if app.user is not null %}
+  <fieldset class="cadre">
+ <legend><h3>Vos informations personnelles :</h3></legend>
+ <div class="row">
+   <div class="col-sm-6">
+     <div class="form-group">
+       <label class="control-label required" for="null">Votre email :</label>
+       <input type="text" id="null" name="null" required="required" class="password-field form-control" value="{{ app.user.email }}" disabled></div>
+       <div class="form-group">
+         <label class="control-label required" for="null">Confirmez votre email :</label>
+         <input type="text" id="null" name="null" required="required" class="password-field form-control" value="{{ app.user.email }}" disabled></div>
+     </div>
+   <div class="col-sm-6">
+     <div class="form-group">
+       <label class="control-label required" for="null">Civilité :</label>
+       <input type="text" id="null" name="null" required="required" class="password-field form-control" value="{{ app.user.gender }}" disabled></div>
+
+       <div class="form-group">
+         <label class="control-label required" for="null">Nom :</label>
+         <input type="text" id="null" name="null" required="required" class="password-field form-control" value="{{ app.user.firstname}}" disabled></div>
+
+         <div class="form-group">
+           <label class="control-label required" for="null">Téléphone :</label>
+           <input type="text" id="null" name="null" required="required" class="password-field form-control" value="{{ app.user.phone }}" disabled></div>
+   </div>
+ </div>
+ </fieldset>
+
+  {% else %}
+  <div class="alert alert-warning">
+  <strong><span class="glyphicon glyphicon-info-sign"></span>  Important.</strong> Identifiez-vous ou inscrivez-vous afin de faciliter le suivi de votre demande.
+  </div>
+  <fieldset class="cadre">
+ <legend><h3>Vos informations personnelles :</h3></legend>
+ <div class="row">
+   <div class="col-sm-6">
+       {{ form_errors(form.mail) }}
+           {{ form_widget(form.mail, { 'attr': {'style': 'margin-bottom:14px;width: 220px'}}) }}
+
+     </div>
+   <div class="col-sm-6">
+     {{ form_label(form.gender, "Civilité") }}
+     {{ form_errors(form.gender) }}
+     {{ form_widget(form.gender, { 'attr': {'style': 'margin-bottom:14px;width: 150px'}}) }}
+
+     {{ form_label(form.nom, "Nom :") }}
+     {{ form_errors(form.nom) }}
+     {{ form_widget(form.nom, { 'attr': {'style': 'margin-bottom:14px;width: 210px'}}) }}
+
+     {{ form_label(form.tel, "Téléphone :") }}
+     {{ form_errors(form.tel) }}
+     {{ form_widget(form.tel, { 'attr': {'style': 'margin-bottom:14px;width: 120px'}}) }}
+   </div>
+ </div>
+ </fieldset>
+  {% endif %}
+ <fieldset class="cadre">
+<legend><h3>Votre bien :</h3></legend>
+  <div class="alert alert-info">  <strong><span class="glyphicon glyphicon-info-sign"></span>  Important.</strong>
+    Merci de nous indiquer les dimensions, provenances ou signature afin de faciliter l'expertise de votre bien.</div>
+  {{ form_label(form.message, "Description :") }}
+  {{ form_errors(form.message) }}
+  {{ form_widget(form.message, { 'attr': {'style': 'margin-bottom:14px'}}) }}
+<label class="control-label" for="hdv_mainbundle_estimate_images">Photos du bien : <small>(3 photos max. Format JPG/GIF/PNG. 3 MO max par photos.)</small></label>
+<div class="upload">
+<input type="file" class="browse" id="hdv_mainbundle_estimate_images1" name="hdv_mainbundle_estimate[images][1]" required="required" accept="image/*"> <span id="file-select-button1" class="btn img">Photo 1</span>
+<input type="file" class="browse" id="hdv_mainbundle_estimate_images2" name="hdv_mainbundle_estimate[images][2]" accept="image/*"> <span id="file-select-button2" class="btn img">Photo 2</span>
+<input type="file" class="browse" id="hdv_mainbundle_estimate_images3" name="hdv_mainbundle_estimate[images][3]" accept="image/*"> <span id="file-select-button3" class="btn img">Photo 3</span>
+</div><br/>
+<button type="submit" id="hdv_mainbundle_estimate_save" name="hdv_mainbundle_estimate[save]" class="btn-default btn">Envoyer</button>
+   </fieldset>
+<small>Conformément à la loi "informatique et libertés" du 6 janvier 1978 modifiée, vous bénéficiez d’un droit d’accès et de rectification aux informations qui vous concernent. Si vous souhaitez exercer ce droit et obtenir communication des informations vous concernant, veuillez vous adresser à l'étude Goxe-Belaïsch</small>
+  <br/>
+  </div>
+  {{ form_row(form._token) }}
+{{ form_end(form, {'render_rest': false}) }}
+</div>
+</div>
+</div>
+
+<div class="col-md-4">
+  <div class="box box-primary">
+    <div class="box-body text-center">
+      <div class="box-header with-border">
+        <h3 class="box-title">Nos ventes à venir</h3>
+      </div>
+  {{ render(controller("HDVVentesBundle:Default:include")) }}
+  </div>
+    </div>
+  </div>
+  </div>
+</section>
+
+
+{% endblock %}
+{% block footer %}
+<script type="text/javascript">
+
+$('#file-select-button1').click(function(){
+    $('#hdv_mainbundle_estimate_images1').click();
+});
+$('#file-select-button2').click(function(){
+    $('#hdv_mainbundle_estimate_images2').click();
+});
+$('#file-select-button3').click(function(){
+    $('#hdv_mainbundle_estimate_images3').click();
+});
+
+    $(function () {
+
+        // A change sélection de fichier
+        $('#formup').find('input[type=file]').on('change', function (e) {
+            var files = $(this)[0].files;
+            var next = $(this).next();
+            if (files.length > 0) {
+                // On part du principe qu'il n'y qu'un seul fichier
+                // étant donné que l'on a pas renseigné l'attribut "multiple"
+                var file = files[0],
+                    $image_preview = $('#image_preview');
+                  var url = window.URL.createObjectURL(file);
+                $(next).css('background-image', 'url('+url+')');
+                $(next).css('background-size', '100% 100%');
+            }
+        });
+
+    });
+
+
+</script>
+{% endblock %}

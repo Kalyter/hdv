@@ -1,0 +1,47 @@
+{% trans_default_domain 'FOSUserBundle' %}
+
+{% if error %}
+    <div class="alert alert-warning">
+    {{ error.messageKey|trans(error.messageData, 'security') }}</div>
+{% endif %}
+<div class="row center" style="display: grid;text-align:center;">
+  <div class="col-sm-6" style="margin: 0 auto;">
+<div class="box" style="border-top-color: #bc3031;">
+  <div class="box-body content text-center">
+    <div class="box-header with-border">
+            <h3 class="box-title">Identification</h3>
+          </div>
+          <form action="{{ path("fos_user_security_check") }}" method="post">
+              {% if csrf_token %}
+                  <input type="hidden" name="_csrf_token" value="{{ csrf_token }}" />
+              {% endif %}
+<br/><br/>
+              <label for="username" class="hidden">{{ 'security.login.username'|trans }}</label>
+              <div class="input-group login">
+                  <span class="input-group-addon"><i class="fa fa-fw  fa-at"></i></span>
+              <input class="form-control" type="text" id="username" name="_username" value="{{ last_username }}" placeholder="Adresse e-mail" required="required" /><br/>
+             </div><br/>
+              <label for="password" class="hidden">{{ 'security.login.password'|trans }}</label>
+              <div class="input-group login">
+                  <span class="input-group-addon"><i class="fa fa-fw  fa-lock"></i></span>
+              <input class="form-control"  type="password" id="password" name="_password" required="required" placeholder="Mot de passe"/><br/>
+</div><br/>
+<div class="input-group login">
+        <div class="col-sm-8">
+          <div class="checkbox">
+            <input type="checkbox" id="remember_me" name="_remember_me" value="on" />
+            <label for="remember_me">{{ 'security.login.remember_me'|trans }}</label><br/>
+            </label>
+          </div>
+        </div>
+        <!-- /.col -->
+        <div class="col-sm-4">
+          <input type="submit" class="btn btn-primary" id="_submit" name="_submit" value="{{ 'security.login.submit'|trans }}" />
+      </form>
+        </div>
+        <!-- /.col -->
+      </div>
+
+    </div>
+  </div>
+</div></div>

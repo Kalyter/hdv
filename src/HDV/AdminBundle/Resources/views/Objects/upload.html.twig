@@ -1,0 +1,58 @@
+
+<html>
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <title>Admin GB</title>
+
+  <meta content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no" name="viewport">
+
+  <link rel="stylesheet" href="http://rawgit.com/enyo/dropzone/master/dist/dropzone.css">
+    <link rel="stylesheet" href="http://rawgit.com/enyo/dropzone/master/dist/min/basic.min.css">
+    <link href="http://fonts.googleapis.com/css?family=Roboto:400,300,500,300italic|Inconsolata:400,700" rel="stylesheet" type="text/css">
+<style>
+html, body {
+    height: 100%;
+    font-family: Roboto, "Open Sans", sans-serif;
+    font-size: 20px;
+    font-weight: 300;
+    line-height: 1.4rem;
+    background: #F3F4F5;
+    color: #646C7F;
+    text-rendering: optimizeLegibility;
+}
+.dropzone {
+    border: 2px dashed #0087F7;
+    border-radius: 5px;
+    background: white;
+}
+.dropzone .dz-message {
+    font-weight: 400;
+}
+</style>
+{% javascripts 'bundles/adminjs/jquery-2.2.3.min.js' %}
+ <script type="text/javascript" src="{{ asset_url }}"></script>
+{% endjavascripts %}
+<script src="http://rawgit.com/enyo/dropzone/master/dist/dropzone.js"></script>
+</head>
+
+<body class="hold-transition skin-blue sidebar-mini">
+
+<div class="dropzone needsclick dz-clickable" id="form_snippet_image" action="{{path('ajax_snippet_image_send', {'idvente': vente.id}) }}">
+  <div class="dz-message needsclick">
+    Cliquez ou déposez vos images ici.<br>
+  </div>
+</div>
+<script >
+//je récupère l'action où sera traité l'upload en PHP
+var _actionToDropZone = $("#form_snippet_image").attr('action');
+
+//je définis ma zone de drop grâce à l'ID de ma div citée plus haut.
+Dropzone.autoDiscover = false;
+var myDropzone = new Dropzone("#form_snippet_image", { url: _actionToDropZone });
+myDropzone.on("complete", function(file) {
+  myDropzone.removeFile(file);
+});
+</script>
+</body>
+</html>

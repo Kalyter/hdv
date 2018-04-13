@@ -1,0 +1,4 @@
+services:
+#    auction_one_main.example:
+#        class: AuctionOne\MainBundle\Example
+#        arguments: ["@service_id", "plain_value", "%parameter%"]

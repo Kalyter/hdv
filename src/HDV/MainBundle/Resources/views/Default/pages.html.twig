@@ -1,0 +1,33 @@
+{% extends "::layout.html.twig" %}
+{% block body %}
+
+<section class="content">
+<div class="row">
+    <div class="col-md-8">
+    <div class="box box-content">
+      <div class="box-body content">
+        <div class="box-header with-border">
+          <h3 class="box-title">{{ page.slug|capitalize }}</strong>
+        </div>
+{{ page.content|raw }}
+</div>
+</div>
+</div>
+
+<div class="col-md-4">
+  <div class="box box-primary">
+    <div class="box-body text-center">
+      <div class="box-header with-border">
+        <h3 class="box-title">Nos ventes à venir</h3>
+      </div>
+  {{ render(controller("HDVVentesBundle:Default:include")) }}
+  </div>
+    </div>
+  </div>
+  </div>
+</section>
+
+
+{% endblock %}
+{% block footer %}
+{% endblock %}

@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+
+<html>
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <title>Admin GB</title>
+
+  <meta content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no" name="viewport">
+  {% stylesheets  'bundles/css/bootstrap.min.css' %}
+   <link rel="stylesheet" href="{{ asset_url }}" type="text/css" />
+ {% endstylesheets %}
+ {% stylesheets 'bundles/css/AdminLTE.min.css' %}
+  <link rel="stylesheet" href="{{ asset_url }}" type="text/css" />
+{% endstylesheets %}
+{% stylesheets 'bundles/css/skin-blue.css' %}
+ <link rel="stylesheet" href="{{ asset_url }}" type="text/css" />
+{% endstylesheets %}
+{% stylesheets 'bundles/css/blue.css' %}
+ <link rel="stylesheet" href="{{ asset_url }}" type="text/css" />
+{% endstylesheets %}
+ {% stylesheets filter='cssrewrite' 'bundles/wysihtml/bootstrap3-wysihtml5.min.css' %}
+  <link rel="stylesheet" href="{{ asset_url }}" type="text/css" />
+{% endstylesheets %}
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.5.0/css/font-awesome.min.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/ionicons/2.0.1/css/ionicons.min.css">
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-datetimepicker/4.17.37/css/bootstrap-datetimepicker-standalone.min.css" rel="stylesheet">
+<link href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-datetimepicker/4.17.37/css/bootstrap-datetimepicker.min.css" rel="stylesheet">
+{% javascripts 'bundles/adminjs/jquery-2.2.3.min.js' %}
+ <script type="text/javascript" src="{{ asset_url }}"></script>
+{% endjavascripts %}
+{% javascripts 'bundles/wysihtml/bootstrap3-wysihtml5.all.min.js' %}
+ <script type="text/javascript" src="{{ asset_url }}"></script>
+{% endjavascripts %}
+</head>
+<body>
+<h2>Réponse à une demande d'estimation'</h2><hr>
+
+<form id="form" action="{{ path('hdv_admin_estimate_answer', {'estimate': estimate.id }) }}" method="post">
+  <textarea id="message" name="message" class="form-control" style="height: 300px;">
+
+     Suite à votre demande d'estimation du {{ estimate.date|localizeddate('medium', 'none', 'fr') }} suivante :<br/><br/>
+     <small><i>{{ estimate.message|slice(0,200) }}...</i></small><br/>
+     {% for key,value in estimate.images %}
+       <img src="{{ app.request.scheme ~'://' ~ app.request.httpHost ~ asset("bundles/images/estimate/"~ value) }}" width="110" height="110" alt="{{ key }}"/>
+     {% endfor %}<br/><br/>
+     Nous vous informons que :<br/>
+     A COMPLETER.<br/><br/>
+     En vous remerciant par avance de votre compréhension.<br/>
+     Bien cordialement,<br/>
+     SAISIR NOM
+   </textarea><br/>
+    <input type="submit" value="Envoyer" class="btn btn-success" />
+
+
+</form>
+<script>
+$(document).ready(function() {
+    $('#form').on('submit', function(e) {
+        e.preventDefault(); // J'empêche le comportement par défaut du navigateur, c-à-d de soumettre le formulaire
+        var $this = $(this);
+            $.ajax({
+                url: $this.attr('action'),
+                type: $this.attr('method'),
+                data: $this.serialize(),
+                dataType: 'json', // JSON
+                success: function(json) {
+                  parent.location.reload(true);
+                }
+            });
+
+    });
+    $(".btn").click(function(){
+        $(this).button('loading');
+    });
+});
+var wysihtml5ParserRules = {
+  tags: {
+    "img": {
+        "check_attributes": {
+            "width": "numbers",
+            "alt": "alt",
+            "src": "url",
+            "height": "numbers",
+            "style": "allow",
+            "class": "allow"
+        }
+    }
+  }
+};
+$('#message').wysihtml5({
+  parserRules:  wysihtml5ParserRules,
+  toolbar: {
+    fa: true
+  }
+});
+</script>
+</body>
+</html>

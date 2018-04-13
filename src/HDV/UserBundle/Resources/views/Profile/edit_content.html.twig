@@ -1,0 +1,25 @@
+{% trans_default_domain 'FOSUserBundle' %}
+<div class="box-header with-border">
+        <h3 class="box-title">Modifier vos identifiants de connexion</h3>
+      </div>
+    <div class="box-body content">
+{{ form_start(form, { 'action': path('fos_user_profile_edit'), 'attr': { 'class': 'fos_user_profile_edit' } }) }}
+{{ form_label(form.email) }}
+{{ form_errors(form.email) }}
+<div class="input-group" style="margin-bottom:10px;">
+    <span class="input-group-addon"><i class="fa fa-fw  fa-at"></i></span>
+    {{ form_widget(form.email, { 'attr': { 'placeholder': 'Adresse e-mail'}}) }}
+</div>
+{{ form_label(form.current_password) }}
+{{ form_errors(form.current_password) }}
+<div class="input-group">
+    <span class="input-group-addon"><i class="fa fa-fw  fa-lock"></i></span>
+    {{ form_widget(form.current_password, { 'attr': { 'placeholder': 'Mot de passe'}}) }}
+</div>
+<br/>
+    {{ form_widget(form) }}
+    <div>
+        <input type="submit" value="{{ 'profile.edit.submit'|trans }}" />
+    </div>
+{{ form_end(form) }}
+</div>

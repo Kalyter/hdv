@@ -1,0 +1,30 @@
+@font-face {
+  font-family: 'ie';
+  src:  url('../../bundles/css/fonts/ie.eot?kstpcv');
+  src:  url('../../bundles/css/fonts/ie.eot?kstpcv#iefix') format('embedded-opentype'),
+    url('../../bundles/css/fonts/ie.ttf?kstpcv') format('truetype'),
+    url('../../bundles/css/fonts/ie.woff?kstpcv') format('woff'),
+    url('../../bundles/css/fonts/ie.svg?kstpcv#ie') format('svg');
+  font-weight: normal;
+  font-style: normal;
+}
+
+[class^="icon-"], [class*=" icon-"] {
+  /* use !important to prevent issues with browser extensions that change fonts */
+  font-family: 'ie' !important;
+  speak: none;
+  font-style: normal;
+  font-weight: normal;
+  font-variant: normal;
+  text-transform: none;
+  line-height: 1;
+  color: darkred;
+
+  /* Better Font Rendering =========== */
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+.icon-live:before {
+  content: "\e900";
+}

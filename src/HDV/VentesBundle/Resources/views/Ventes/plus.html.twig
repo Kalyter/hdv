@@ -1,0 +1,56 @@
+{% extends "::layout.html.twig" %}
+{% block body %}
+
+<section class="content">
+<div class="row">
+  <div class="col-md-4">
+    <div class="box box-primary">
+      <div class="box-body text-center">
+  {% if vente.image is not null %}
+  <img src="{{ asset(vente.image.webPath) | imagine_filter('couverturelist') }}" style="border: 1px solid #d0d0d0;margin-top:20px;margin-bottom:20px;" alt="{{ vente.image.alt }}" onError="ImageLoadFailed()"/>
+  {% else %}
+  <img style="margin-top:20px;border: 1px solid #d0d0d0;" src="{{ asset("hdv/web/bundles/images/couv/sans.jpg") | imagine_filter('couverturelist') }}" alt="sans">
+  {% endif %}
+    <p class="validate text-center">le {{ vente.date|localizeddate('full', 'short', 'fr')|capitalize }}</p>
+    <div class="list-group">
+      <a href="{{ path('hdv_ventes_view', {'id': vente.id}) }}" class="list-group-item"><i class="fa fa-fw fa-list"></i>Liste des lots</a>
+      <a href="{{ path('hdv_ventes_homepage') }}" class="list-group-item"><i class="fa fa-fw fa-calendar"></i>Retour au calendrier</a>
+    </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="col-md-8">
+    <div class="box box-content">
+      <div class="box-body content">
+        <div class="box-header with-border">
+          <h3 class="box-title">{{ vente.title }}</h3>
+        </div>
+  <br/>
+  <div class="row">
+      <div class="col-md-7">
+  <b>Isabelle GOXE & Laurent Belaisch</b><br/>
+  Hôtel des ventes d'Enghien<br/>
+  2, rue du docteur Leray<br/>
+  95880 Enghien-les-Bains - France<br/>
+  <span class="fa fa-fw fa-phone"></span>Tel : 01 34 12 68 16<br/>
+  <span class="fa fa-fw fa-at"></span>Mail : contact@enghien-svv.com
+    </div>
+    <div class="col-md-5">
+  <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2619.102243816278!2d2.3041956160678256!3d48.97057807929866!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x47e6688cfdd13f51%3A0xb0de9f35b4d0168d!2sH%C3%B4tel+des+Ventes+d&#39;Enghien!5e0!3m2!1sfr!2sfr!4v1494155311000" width="200" height="200" frameborder="0" style="border:0" allowfullscreen></iframe>
+    </div>
+  </div><br/>
+{{ vente.description|raw }}
+<br/><font color=#D3AF55><h3>Conditions de vente :</h3></font><hr>
+{{ vente.conditions|raw }}
+
+</div>
+</div>
+</div>
+</div>
+</section>
+
+{% endblock %}
+{% block footer %}
+
+{% endblock %}

@@ -1,0 +1,29 @@
+<div class="box box-primary">
+  <div class="box-body text-center">
+
+    <div class="media">
+      <div class="media-left media-middle" style="padding-left:35px;">
+        {% if vente.image is not null %}
+        <img src="{{ asset(vente.image.webPath) }}" style="max-height:180px;margin-top:8px;margin-bottom:8px;" alt="{{ vente.image.alt }}" onError="ImageLoadFailed()"/>
+        {% else %}
+        <img style="max-height:150px;margin-top:20px;" src="{{ asset("bundles/images/couv/sans.jpg") }}" alt="sans">
+        {% endif %}
+      </div>
+      <div class="media-body media-middle">
+        <h2 class="media-heading">{{ vente.title }}</h2>
+        <i>  le {{ vente.date|localizeddate('full', 'short', 'fr')|capitalize }}</i>
+      </div>
+    </div>
+
+
+<div class="box-footer" style="text-align:left;">
+  <a href="{{ path('hdv_admin_objects_vente', {'id': vente.id}) }}" class="btn btn-primary btn-sm"><i class="fa fa-fw fa-calendar"></i> Retour</a>
+  <a href="{{ path('hdv_admin_edit_vente', {'id': vente.id}) }}" class="btn btn-primary btn-sm"><i class="fa fa-fw fa-pencil"></i> Modifier la vente</a>
+  <a href="{{ path('hdv_admin_objects_add', {'vente': vente.id}) }}" class="btn btn-primary btn-sm"> <span class="fa fa-lg  fa-plus"></span> Ajouter un objet</a>
+  <a href="{{ path('hdv_admin_objects_import', {'id': vente.id}) }}"class="btn btn-primary btn-sm"><span class="fa fa-lg fa-file-excel-o"></span> Importer des lots</a>
+  <a href="{{ path('hdv_admin_upload_images', {'idvente': vente.id}) }}" data-fancybox class="btn btn-primary btn-sm"><span class="fa fa-lg fa-file-image-o"></span> Importer des photos</a>
+</div>
+
+
+  </div>
+</div>

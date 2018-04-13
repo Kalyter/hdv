@@ -1,0 +1,32 @@
+{{ form_start(form) }}
+{{ form_label(form.type, "Type d'ordre :") }}
+{{ form_errors(form.type) }}
+{{ form_widget(form.type, { 'attr': {'style': 'margin-bottom:14px;width: 150px'}}) }}
+
+<label class="control-label" id="label_mont" for="hdv_ventesbundle_ordres_montant">Montant en euros :</label>
+{{ form_errors(form.montant) }}
+{{ form_widget(form.montant, { 'attr': {'style': 'margin-bottom:14px;width: 150px', 'placeholder': 'Montant en €'} }) }}
+    {{ form_rest(form) }}
+{{ form_end(form) }}
+
+<script type="text/javascript">
+$(document).ready(function() {
+
+    $('#hdv_ventesbundle_ordres_montant').hide(); // on cache le champ par défaut
+    $('#label_mont').hide();
+    $('select[name="hdv_ventesbundle_ordres[type]"]').change(function() { // lorsqu'on change de valeur dans la liste
+    var valeur = $(this).val(); // valeur sélectionnée
+
+
+            if(valeur == 'Ordre') { // si "jaune"
+                $('#hdv_ventesbundle_ordres_montant').show();
+                $('#label_mont').show();
+            } else {
+                $('#hdv_ventesbundle_ordres_montant').hide();
+                $('#label_mont').hide();
+            }
+
+    });
+
+});
+</script>

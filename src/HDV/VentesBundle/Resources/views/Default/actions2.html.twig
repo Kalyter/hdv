@@ -1,0 +1,1 @@
+{{ dt_item|number_format(0, '.', ' ') }} € / {{ dt_obj.estimhaute|number_format(0, '.', ' ') }} €{% if dt_obj.adjuge is defined and dt_obj.adjuge > 0 %}<br/>Résultat: {{dt_obj.adjuge}} €{% endif %}

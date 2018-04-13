@@ -1,0 +1,196 @@
+imports:
+    - { resource: parameters.yml }
+    - { resource: security.yml }
+    - { resource: services.yml }
+# Put parameters here that don't need to change on each machine where the app is deployed
+# http://symfony.com/doc/current/best_practices/configuration.html#application-related-configuration
+liip_imagine :
+    resolvers:
+        default:
+            web_path:
+                web_root: '%kernel.root_dir%/../web'
+                cache_prefix: "bundles/images/cache"
+    loaders:
+        default:
+            filesystem:
+                data_root: '%kernel.root_dir%/../../'
+    filter_sets :
+        cache : ~
+        news :
+            quality : 100
+            filters :
+                thumbnail  : { size : [200, 150], mode : outbound }
+        couverture :
+            quality : 100
+            filters :
+                thumbnail  : { size : [110, 160], mode : outbound }
+        lot :
+            filters:
+                relative_resize:
+                    widen: 100
+        lotmoyen :
+            filters:
+                relative_resize:
+                    widen: 240
+        couverturelist :
+            filters:
+                relative_resize:
+                    heighten: 280
+        couverturecat :
+            filters:
+                relative_resize:
+                    heighten: 670
+        carouselfinal :
+            filters:
+                carousel: {}
+
+parameters:
+    locale: fr
+    mailer_user: denis.steve.ont@gmail.com
+
+assetic:
+  debug:          '%kernel.debug%'
+  use_controller: '%kernel.debug%'
+  filters:
+    cssrewrite: ~
+framework:
+    #esi: ~
+    translator: { fallbacks: ['%locale%'] }
+    secret: '%secret%'
+    router:
+        resource: '%kernel.root_dir%/config/routing.yml'
+        strict_requirements: ~
+    form: ~
+    csrf_protection: ~
+    validation: { enable_annotations: true }
+    #serializer: { enable_annotations: true }
+    templating:
+        engines: ['twig']
+    default_locale: '%locale%'
+    trusted_hosts: ~
+    trusted_proxies: ~
+    session:
+        # http://symfony.com/doc/current/reference/configuration/framework.html#handler-id
+        handler_id:  session.handler.native_file
+        save_path:   "%kernel.root_dir%/../var/sessions/%kernel.environment%"
+    fragments: ~
+    http_method_override: true
+    assets: ~
+    php_errors:
+        log: true
+
+# Twig Configuration
+twig:
+    debug: '%kernel.debug%'
+    strict_variables: '%kernel.debug%'
+    form_themes:
+        - 'bootstrap_3_layout.html.twig'
+
+# Doctrine Configuration
+doctrine:
+    dbal:
+        driver: pdo_mysql
+        host: '%database_host%'
+        port: '%database_port%'
+        dbname: '%database_name%'
+        user: '%database_user%'
+        password: '%database_password%'
+        charset: UTF8
+        # if using pdo_sqlite as your database driver:
+        #   1. add the path in parameters.yml
+        #     e.g. database_path: "%kernel.root_dir%/../var/data/data.sqlite"
+        #   2. Uncomment database_path in parameters.yml.dist
+        #   3. Uncomment next line:
+        #path: '%database_path%'
+
+    orm:
+        auto_generate_proxy_classes: '%kernel.debug%'
+        naming_strategy: doctrine.orm.naming_strategy.underscore
+        auto_mapping: true
+
+# Swiftmailer Configuration
+swiftmailer:
+    transport: smtp
+    host: 'mail.auctioninone.com'
+    port: 587
+    username: 'denis.steve@auctioninone.com'
+    password: 'Pecekeke1'
+    auth_mode: 'login'
+    encryption: 'tls'
+    spool: { type: memory }
+
+# Stof\DoctrineExtensionsBundle configuration
+stof_doctrine_extensions:
+    orm:
+        default:
+            sluggable: true
+waldo_datatable:
+    all:    ~
+    js:
+      oLanguage:
+        sProcessing: "<img src='https://upload.wikimedia.org/wikipedia/commons/d/de/Ajax-loader.gif'>"
+      processing : true
+      lengthMenu: [[10, 25, 50, 100], [10, 25, 50, 100]]
+      pagingType: "simple_numbers"
+      language:
+        sProcessing:     "Traitement en cours..."
+        sSearch:         "Rechercher&nbsp;:"
+        sLengthMenu:     "Afficher _MENU_ lots par page"
+        sInfo:           "Affichage des lots _START_ &agrave; _END_ sur _TOTAL_ lots"
+        sInfoEmpty:      "Affichage des lots 0 &agrave; 0 sur 0 lots"
+        sInfoFiltered:   "(filtr&eacute; de _MAX_ lots au total)"
+        sInfoPostFix:    ""
+        sLoadingRecords: "Chargement en cours..."
+        sZeroRecords:    "Aucun lot &agrave; afficher"
+        sEmptyTable:     "Aucune donn&eacute;e disponible dans le tableau"
+        oPaginate:
+          sFirst:      "Premier"
+          sPrevious:   "Pr&eacute;c&eacute;dent"
+          sNext:       "Suivant"
+          sLast:       "Dernier"
+
+fos_user:
+    db_driver:     orm                       # Le type de BDD à utiliser, nous utilisons l'ORM Doctrine depuis le début
+    firewall_name: main                      # Le nom du firewall derrière lequel on utilisera ces utilisateurs
+    user_class:    HDV\UserBundle\Entity\User # La classe de l'entité User que nous utilisons
+    service:
+        mailer: fos_user.mailer.twig_swift
+    resetting:
+        email:
+            template:   HDVUserBundle:Resetting:email.html.twig
+            from_email:
+                address:        noreply@enghien-svv.com
+                sender_name:    No-Reply Goxe-Belaïsch
+    from_email:
+      address: '%mailer_user%'
+      sender_name: '%mailer_user%'
+    registration:
+        confirmation:
+            enabled: true
+            template:   HDVUserBundle:Registration:email.html.twig
+            from_email:
+                address:        noreply@enghien-svv.com
+                sender_name:    No-Reply Goxe-Belaïsch
+        form:
+            type: HDV\UserBundle\Form\RegistrationFormType
+    profile:
+        form:
+            type: HDV\UserBundle\Form\ProfileFormType
+ivory_ck_editor:
+    default_config:                     my_custom_config    # Utiliser par defaut la configuration my_custom_config
+    configs:
+        my_custom_config:
+            language:                   '%locale%'
+            toolbar:                    [ [ 'Preview' ], [ 'Cut','Copy','Paste','PasteText','PasteFromWord','-','Undo','Redo' ], [ 'Find','Replace','-','SelectAll','-','SpellChecker', 'Scayt' ], [ 'Source' ], [ "About" ], "/", [ 'Bold','Italic','Underline','Strike', 'Blockquote','Subscript','Superscript','-','RemoveFormat' ], [ 'NumberedList','BulletedList','-','Outdent','Indent','-','-','JustifyLeft','JustifyCenter','JustifyRight','JustifyBlock' ], [ 'Link','Unlink','Anchor' ], [ 'pbckcode', 'Image', 'Video', 'Table','SpecialChar','Iframe' ], '/', [ 'Styles', 'Format','Font','FontSize' ], [ 'TextColor','BGColor' ], [ 'RemoveFormat' ], [ 'Maximize' ] ]
+            stylesSet:                  my_styles           # Chargement des styles personnalisables my_styles (voir plus bas)
+            uiColor:                    "#FCFCFC"           # Couleur de fond de l'interface
+            height:                     '300px'             # Hauteur par défaut
+            # Utiliser les styles css suivants dans le contenu de l'éditeur. Permet de voir le rendu en temps réeem
+            contentsCss:                ['bundles/css/site/bootstrap.css']
+    styles:         # Configuration des styles personnalisables
+        my_styles:
+            - { name: "Alerte Success", element: "div",  attributes: { class: "alert alert-success", role: "alert" }}
+            - { name: "Alerte Info", element: "div",  attributes: { class: "alert alert-info", role: "alert" }}
+            - { name: "Alerte Warning", element: "div",  attributes: { class: "alert alert-warning", role: "alert" }}
+            - { name: "Alerte Danger", element: "div",  attributes: { class: "alert alert-danger", role: "alert" }}
+            - { name: "Badge", element: "span",  attributes: { class: "badge" }}

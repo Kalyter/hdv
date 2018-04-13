@@ -1,0 +1,29 @@
+
+
+  {% for ventes in listVentes %}
+  <div class="row cat">
+    <div class="col-md-3">
+    {% if ventes.image is not null %}
+      <img style="border: 1px solid #d0d0d0;" src="{{ asset(ventes.image.webPath) | imagine_filter('couverture') }}" alt="{{ ventes.image.alt }}">
+      {% else %}
+      <img style="max-height:160px;border: 1px solid #d0d0d0;" src="{{ asset("bundles/images/couv/sans.jpg") }}" alt="sans">
+    {% endif %}
+    </div>
+  <div class="col-md-9" style="padding:10px;">
+      <b>{{ ventes.date|localizeddate('full', 'short', 'fr')|capitalize }}</b><br/>
+      <font color=#D3AF55>{{ ventes.title }}</font><br/>
+        <div class="btn-group btn-group-xs">
+         {% if ventes.objects|length > 1 %}
+          <a class="btn btn-menu" href="{{ path('hdv_ventes_view', {'id': ventes.id}) }}"><i class="fa fa-fw  fa-list" style="font-size: 24px"></i><br/>Lots</a>
+          {% endif %}
+          <a class="btn btn-menu" href="{{ path('hdv_ventes_plus', {'id': ventes.id}) }}"><i class="fa fa-fw fa-info-circle" style="font-size: 24px"></i><br/>Informations</a>
+          {% if ventes.catpublished == 1 %}
+          <a class="btn btn-menu" href="{{ path('hdv_ventes_catalogue', {'id': ventes.id}) }}"><i class="fa fa-fw fa-book" style="font-size: 24px"></i><br/>Catalogue</a>
+          {% endif %}
+          {% if ventes.liveurl|length > 1 %}
+           <a class="btn btn-menu" target="_blank" href="{{ relative_path(ventes.liveurl) }}"><i class="icon-live" style="font-size: 21px"></i><br/>Enchérir en live</a>
+           {% endif %}
+        </div>
+  </div>
+  </div>
+  {% endfor %}

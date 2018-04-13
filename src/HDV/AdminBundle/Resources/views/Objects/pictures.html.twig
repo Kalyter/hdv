@@ -1,0 +1,182 @@
+<!DOCTYPE html>
+
+<html>
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <title>Admin GB</title>
+
+  <meta content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no" name="viewport">
+  {% stylesheets  'bundles/css/bootstrap.min.css' %}
+   <link rel="stylesheet" href="{{ asset_url }}" type="text/css" />
+ {% endstylesheets %}
+ {% stylesheets 'bundles/css/AdminLTE.min.css' %}
+  <link rel="stylesheet" href="{{ asset_url }}" type="text/css" />
+{% endstylesheets %}
+{% stylesheets 'bundles/css/skin-blue.css' %}
+ <link rel="stylesheet" href="{{ asset_url }}" type="text/css" />
+{% endstylesheets %}
+{% stylesheets 'bundles/css/blue.css' %}
+ <link rel="stylesheet" href="{{ asset_url }}" type="text/css" />
+{% endstylesheets %}
+ {% stylesheets filter='cssrewrite' 'bundles/wysihtml/bootstrap3-wysihtml5.min.css' %}
+  <link rel="stylesheet" href="{{ asset_url }}" type="text/css" />
+{% endstylesheets %}
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.5.0/css/font-awesome.min.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/ionicons/2.0.1/css/ionicons.min.css">
+<script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/1.8.3/jquery.min.js"></script>
+<script src="https://code.jquery.com/ui/1.8.24/jquery-ui.min.js" type="text/javascript"></script>
+<link href="https://code.jquery.com/ui/1.8.24/themes/blitzer/jquery-ui.css" rel="stylesheet" type="text/css" />
+<style>
+body
+{
+    font-family: Arial;
+    font-size: 10pt;
+}
+img
+{
+    height: 100px;
+    width: 100px;
+    margin: 2px;
+}
+.draggable
+{
+    filter: alpha(opacity=60);
+    opacity: 0.6;
+}
+
+#supplementaire
+{
+    border: 5px solid #ccc;
+    padding: 5px;
+    min-height: 100px;
+    width: 430px;
+}
+#principal
+{
+    border: 5px solid #ccc;
+    min-height: 180px;
+    width: 150px;
+    text-align: center;
+    margin-left: auto;
+    margin-right: auto;
+}
+#base,  #base2
+{
+    width:450px;
+    border: 5px solid #ccc;
+    padding: 5px;
+    float: left;
+    min-height: 100px;
+    margin: 10px;
+}
+
+</style>
+
+</head>
+<body>
+<h2>Gestion des images du lot n°{{object.id}}</h2><hr>
+<div id="obj" data="{{object.id}}" style="display:none;"></div>
+<div id="all">
+<div id="base">
+<div id="principal">Photo principale :<hr/>
+  {% if object.image is not null %}
+  <img src="{{ asset("hdv/web/bundles/images/ventes/"~object.codevac~"/"~ object.image) | imagine_filter('lotmoyen') }}" value="{{ object.image }}" from="principal"/>
+  {% endif %}
+</div><br/>
+<div id="supplementaire">Photos supplémentaires :<hr/>
+  {% if object.imagesupp is not null %}
+{{ imgmultiple(object.imagesupp,object.codevac,'100')|raw }}
+{% endif %}</div>
+<hr />
+
+</div>
+<div id="base2">Photos non attribuées :<hr/>
+  {% for picture in pictures %}
+  <img src="{{ asset("hdv/web/bundles/images/ventes/"~object.codevac~"/"~ picture) | imagine_filter('lotmoyen') }}" value="{{ picture }}" from="nonatt"/>
+  {% endfor %}
+</div>
+</div>
+<script src="{{ asset('bundles/fosjsrouting/js/router.js') }}"></script>
+<script src="{{ path('fos_js_routing_js', {"callback": "fos.Router.setData"}) }}"></script>
+<script>
+$(function () {
+    $("#all img").draggable({
+      greedy:true,
+        revert: true,
+        drag: function (event, ui) {
+            ui.helper.addClass("draggable");
+        },
+        stop: function (event, ui) {
+            ui.helper.removeClass("draggable");
+            var image = this.src.split("/")[this.src.split("/").length - 1];
+        }
+    });
+    $("#principal").droppable({
+        drop: function (event, ui) {
+            if ($("#principal img").length > 0) {
+              return;
+            }
+            else {
+              var section=$(this).attr('id');
+              //console.log($(ui.draggable).attr('id'));
+              var from=$(ui.draggable).attr('from');
+              var value=$(ui.draggable).attr('value');
+              var obj=$("#obj").attr('data');
+              update(obj, section, value, from);
+              $(ui.draggable).attr('from', 'principal');
+
+              $("#principal").append(ui.draggable);
+            }
+
+        }
+    });
+    $("#supplementaire").droppable({
+        drop: function (event, ui) {
+            if ($("#supplementaire img").length == 0) {
+                $("#supplementaire").html("");
+            }
+
+                    var section=$(this).attr('id');
+                    //console.log($(ui.draggable).attr('id'));
+                    var from=$(ui.draggable).attr('from');
+                    var value=$(ui.draggable).attr('value');
+                    var obj=$("#obj").attr('data');
+                    update(obj, section, value, from);
+                    $(ui.draggable).attr('from', 'multiple');
+
+            $("#supplementaire").append(ui.draggable);
+        }
+    });
+    $("#base2").droppable({
+        drop: function (event, ui) {
+            if ($("#base2 img").length == 0) {
+                $("#base2").html("");
+            }
+            var section=$(this).attr('id');
+            //console.log($(ui.draggable).attr('id'));
+            var from=$(ui.draggable).attr('from');
+            var value=$(ui.draggable).attr('value');
+            var obj=$("#obj").attr('data');
+            update(obj, section, value, from);
+            $(ui.draggable).attr('from', 'nonatt');
+            $("#base2").append(ui.draggable);
+        }
+    });
+});
+function update(obj, section, value, from) {
+
+    var path = Routing.generate('hdv_admin_objects_pictures_update', { object: obj, from: from, value: value, section: section });
+  $.ajax({
+      url: path,
+      //data: data,
+      processing: true,
+      //dataType: dataType
+      success:function( data ) {
+      }
+  });
+
+}
+</script>
+</body>
+</html>

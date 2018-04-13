@@ -1,0 +1,2 @@
+<a href="{{ path('hdv_admin_news_edit', {'news': dt_item}) }}" class="btn btn-info" style="margin-right:15px;"><span class="fa fa-lg fa-pencil" style="margin-right:5px;"></span> Editer</a>
+<a href="{{ path('hdv_admin_news_delete', {'news': dt_item}) }}" onclick="if(window.confirm('Etes vous sûr de vouloir supprimer ce lot ?')){return true;}else{return false;}" class="btn btn-danger"><span class="fa fa-lg fa-trash" style="margin-right:5px;"></span> Supprimer</a>

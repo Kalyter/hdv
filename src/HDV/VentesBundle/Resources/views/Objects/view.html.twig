@@ -1,0 +1,100 @@
+{% extends "::layout.html.twig" %}
+{% set datedujour = date('now') %}
+{% block body %}
+
+<section class="content">
+<div class="row">
+  <div class="col-md-4">
+    <div class="box box-primary">
+      <div class="box-body text-center">
+  {% if object.codevac.image is not null %}
+  <img src="{{ asset(object.codevac.image.webPath) | imagine_filter('couverturelist') }}" style="border: 1px solid #d0d0d0;margin-top:20px;margin-bottom:20px;" alt="{{ object.codevac.image.alt }}" onError="ImageLoadFailed()"/>
+
+  {% else %}
+  <img style="margin-top:20px;border: 1px solid #d0d0d0;" src="{{ asset("hdv/web/bundles/images/couv/sans.jpg") | imagine_filter('couverturelist') }}" alt="sans">
+  {% endif %}
+    <p class="validate text-center">le {{ object.codevac.date|localizeddate('full', 'short', 'fr')|capitalize }}</p>
+    <div class="list-group">
+      <a href="{{ path('hdv_ventes_enquiry_form', {'id': object.id}) }}" id="fancybox" data-fancybox-type="iframe" class="list-group-item delete"><i class="fa fa-fw fa-question"></i>Demande de renseignements</a>
+      <a href="{{ path('hdv_ventes_plus', {'id': object.codevac.id}) }}" class="list-group-item"><i class="fa fa-fw fa-info"></i>Informations sur la vente</a>
+      <a href="{{ path('hdv_ventes_view', {'id': object.codevac.id}) }}" class="list-group-item"><i class="fa fa-fw fa-list"></i>Liste des lots</a>
+      <a href="{{ path('hdv_ventes_homepage') }}" class="list-group-item"><i class="fa fa-fw fa-calendar"></i>Retour au calendrier</a>
+    </div>
+      </div>
+    </div>
+
+    <div class="box box-primary">
+      <div class="box-body">
+        <div class="box-header with-border">
+                <h3 class="box-title">Ordre d'achat</h3>
+              </div>
+              {% if datedujour > object.codevac.date %}
+              <div class="alert alert-warning">
+              <strong><span class="glyphicon glyphicon-info-sign"></span>  Information.</strong> La vente a déjà eu lieu.
+            </div>
+            {% else %}
+              {% if app.user is not null %}
+              {% if app.user.validate == 0 %}
+              <div class="alert alert-warning">
+              <strong><span class="glyphicon glyphicon-info-sign"></span>  Important.</strong> Votre compte ne présente pas assez de renseignements pour vous permettre de laisser des ordres d'achat. Merci de vous rendre sur votre page de profil.
+            </div>
+            {% else %}
+            <div class="alert alert-info">
+            <strong><span class="glyphicon glyphicon-info-sign"></span>  Information.</strong> Choisissez simplement si vous souhaitez être appelé ou enregistrer votre enchère maximum.
+          </div>
+            <div style="padding:10px;">
+            {{ render(controller(
+                'HDVVentesBundle:Ordres:index',
+                { 'object': object.id, 'cata': 0}
+            )) }}</div>
+
+              <div class="alert alert-warning">
+              <strong><span class="fa fa-fw fa-phone"></span> Vos coordonnées téléphonique :</strong><br/>
+              Téléphone 1 : {% if app.user.phone is not null %} {{ app.user.phone }}  {% else %} Aucun{% endif %}<br/>
+              Téléphone 2 : {% if app.user.phone2 is not null %} {{ app.user.phone2 }}  {% else %} Aucun{% endif %}<br/>
+            </div>
+            {% endif %}
+
+  {% else %}
+  <div class="alert alert-info">
+  <strong><span class="glyphicon glyphicon-info-sign"></span>  Inscrivez-vous.</strong> Une fois inscrit et votre compte validé, vous pourrez laisser un ordre.
+</div>
+  {% endif %}
+  {% endif %}
+        </div>
+      </div>
+
+  </div>
+
+  <div class="col-md-8">
+    <div class="box box-content">
+      <div class="box-body content">
+        <div class="box-header with-border">
+          <h3 class="box-title">{{ object.codevac.title }}</h3>
+        </div>
+  <br/>
+  <div style="float:right;margin:10px;">
+    <a href="{{ asset('bundles/images/ventes/'~object.codevac~'/'~ object.image) }}" data-fancybox="images">
+   <img src="{{ asset('bundles/images/ventes/'~object.codevac~'/'~ object.image) | imagine_filter('lotmoyen') }}" onError="ImageLoadFailed()" align="center"/></a>
+    <br/>{{ imgmultiple(object.imagesupp,object.codevac)|raw }}
+  </div>
+
+  <span style="color:#a52a2a; margin-right:35px;"><strong>Lot n°{{ object.ordre }}{% if object.ordrebis is defined %} {{ object.ordrebis }}{% endif %}</strong></span> Estimation : {{ object.estimbasse|number_format(0, '.', ' ') }} € / {{ object.estimhaute|number_format(0, '.', ' ') }} €<br/><br/> {{ object.description }}
+<div style="clear: both"></div>
+</div>
+</div>
+</div>
+</div>
+</section>
+<script type="text/javascript">
+  $(document).ready(function() {
+    $("#fancybox").fancybox({
+        iframe : {
+          preload : true,
+            scrolling : 'no'
+        }
+      })
+    });
+
+</script>
+{% endblock %}

@@ -1,0 +1,145 @@
+{% extends "::layout.html.twig" %}
+{% set newArray = [] %}
+{% block body %}
+
+<section class="content">
+<div class="row">
+  <div class="col-md-4">
+  <div class="box box-primary">
+    <div class="box-body">
+      <a href="{{ path('fos_user_profile_show') }}"><img src="{{ asset('bundles/images/profil.jpg') }}" class="profile-user-img img-responsive img-circle"></a>
+      <h3 class="profile-username text-center">{{ app.user.gender }} {{ app.user.firstname }} {{ app.user.lastname }}</h3>
+      <p class="validate text-center">{{ app.user.address }}<br/>
+        {{ app.user.zipCode }} {{ app.user.city }}<br/>
+        {{ app.user.phone }}</p>
+      </div>
+    </div>
+</div>
+    <div class="col-md-8">
+      <div class="box box-content">
+          <div class="box-header with-border">
+                  <h3 class="box-title">Situation acheteur dossier n°<b>{{ app.user.codedossier}}</b></h3>
+                </div>
+              <div class="box-body content">
+<select id="vac" size="10"  class="form-control">
+  <option value="" style="color:#D3AF55;font-weight:bold;text-align:center;">- Toutes les ventes -</option>
+  {% for objects in listObjects %}
+        {% if objects.codevac.id not in newArray %}
+    <option value="{{ objects.codevac.id }}">{{ objects.codevac.date|localizeddate('medium', 'none', 'fr') }} -- {{ objects.codevac.title }} </option>
+     {% set newArray = newArray|merge([objects.codevac.id]) %}
+     {% endif %}
+
+  {% else %}
+    <option value="">Aucune vente</option>
+  {% endfor %}
+
+
+</select>
+</div>
+</div>
+</div>
+</div>
+</section>
+
+<div class="box box-content" style="border-top-color:#511a1a;">
+  <div class="box-header with-border">
+          <h3 class="box-title">Liste des lots</h3>
+        </div>
+  <div class="box-body content">
+    <table id="table_id" class="table table-striped">
+        <thead>
+            <tr>
+                <th style="width:15%">Illustration</th>
+                <th style="width:15%">CodeVac</th>
+                <th style="width:15%">Date de vente</th>
+                <th style="width:40%">Description</th>
+                <th style="width:20%">Estimation</th>
+                <th style="width:20%">Adjugé</th>
+            </tr>
+        </thead>
+        <tbody>
+
+    {% for objects in listObjects %}
+    <tr>
+        <td>
+        {% if objects.image is not null %}
+        <a href="{{ asset('bundles/images/ventes/'~objects.codevac~'/'~ objects.image) }}" data-fancybox="images">
+       <img src="{{ asset('hdv/web/bundles/images/ventes/'~objects.codevac~'/'~ objects.image) | imagine_filter('lotmoyen') }}" onError="ImageLoadFailed()" class="img-sensible" align="center"/></a>
+        {% endif %}
+</td>
+<td>{{ objects.codevac.id }}</td>
+<td>{{ objects.codevac.date|localizeddate('short', 'none', 'fr') }}</td>
+<td>{{ objects.ordre }}{% if objects.ordrebis is defined %} {{ objects.ordrebis }}{% endif %} - {{ objects.description }}</td>
+<td>{{ objects.estimbasse }} € / {{ objects.estimhaute }} €</td>
+<td>
+{% if objects.adjuge is not null %}
+
+{% if objects.adjuge == 0 %}
+<b>Invendu</b>
+{% else %}
+<b>{{ objects.adjuge }} €</b>
+{% endif %}
+
+{% else %}
+Résultat Absent
+{% endif %}
+</td>
+</tr>
+
+    {% else %}
+      Pas d'objets.
+    {% endfor %}
+
+    </tbody>
+</table>
+
+</div>
+</div>
+<script type="text/javascript">
+
+$(document).ready( function () {
+var table = $('#table_id').DataTable( {
+"language": {
+"sProcessing":     "Traitement en cours...",
+"sSearch":         "Rechercher&nbsp;:",
+  "sLengthMenu":     "Afficher _MENU_ lots par page",
+"sInfo":           "Affichage des lots _START_ &agrave; _END_ sur _TOTAL_ lots",
+"sInfoEmpty":      "Affichage des lots 0 &agrave; 0 sur 0 lots",
+"sInfoFiltered":   "(filtr&eacute; de _MAX_ lots au total)",
+"sInfoPostFix":    "",
+"sLoadingRecords": "Chargement en cours...",
+  "sZeroRecords":    "Aucun lot &agrave; afficher",
+"sEmptyTable":     "Aucune donn&eacute;e disponible dans le tableau",
+"oPaginate": {
+"sFirst":      "Premier",
+"sPrevious":   "Pr&eacute;c&eacute;dent",
+"sNext":       "Suivant",
+"sLast":       "Dernier"
+},
+"oAria": {
+"sSortAscending":  ": activer pour trier la colonne par ordre croissant",
+"sSortDescending": ": activer pour trier la colonne par ordre d&eacute;croissant"
+}
+  },
+        "columnDefs": [
+           {
+               "targets": [ 1 ],
+               "visible": false
+           }
+       ]
+    } );
+
+$('#vac').change( function () {
+    table
+        .columns( 1 )
+        .search( this.value )
+        .draw();
+} );
+  } );
+
+</script>
+
+
+
+
+{% endblock %}

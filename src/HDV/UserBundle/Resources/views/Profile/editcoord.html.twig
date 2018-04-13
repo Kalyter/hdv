@@ -1,0 +1,59 @@
+{% extends "@FOSUser/layout.html.twig" %}
+{% block fos_user_content %}
+
+        <div class="box-header with-border">
+          <h3 class="box-title">Editer vos coordonnées</h3>
+        </div>
+  <div class="box-body content">
+{{ form_start(form) }}
+  <div class="row">
+    <div class="col-sm-6">
+    {{ form_label(form.gender, "Civilité") }}
+    {{ form_errors(form.gender) }}
+    {{ form_widget(form.gender, { 'attr': {'style': 'margin-bottom:14px;width: 150px'}}) }}
+
+    {{ form_label(form.firstname, "Nom") }}
+    {{ form_errors(form.firstname) }}
+    {{ form_widget(form.firstname, { 'attr': {'style': 'margin-bottom:14px;', 'placeholder': 'Nom'}}) }}
+
+    {{ form_label(form.lastname, "Prénom") }}
+    {{ form_errors(form.lastname) }}
+    {{ form_widget(form.lastname, { 'attr': {'style': 'margin-bottom:14px;', 'placeholder': 'Prénom'}}) }}
+
+    {{ form_label(form.phone, "Téléphone") }}
+    {{ form_errors(form.phone) }}
+    {{ form_widget(form.phone, { 'attr': {'style': 'margin-bottom:14px;width: 150px', 'placeholder': 'Téléphone'}}) }}
+
+    {{ form_label(form.phone2, "Téléphone 2") }}
+    {{ form_errors(form.phone2) }}
+    {{ form_widget(form.phone2, { 'attr': {'style': 'margin-bottom:14px;width: 150px', 'placeholder': 'Téléphone 2'}}) }}
+    </div>
+    <div class="col-sm-6">
+    {{ form_label(form.address, "Adresse") }}
+    {{ form_errors(form.address) }}
+    {{ form_widget(form.address, { 'attr': {'style': 'margin-bottom:14px;', 'placeholder': 'Adresse'}}) }}
+
+    {{ form_label(form.address2, "Adresse Suite") }}
+    {{ form_errors(form.address2) }}
+    {{ form_widget(form.address2, { 'attr': {'style': 'margin-bottom:14px;', 'placeholder': 'Suite'}}) }}
+
+    {{ form_label(form.zipCode, "Code Postal") }}
+    {{ form_errors(form.zipCode) }}
+    {{ form_widget(form.zipCode, { 'attr': {'style': 'margin-bottom:14px;width: 120px', 'placeholder': 'Code Postal'}}) }}
+
+    {{ form_label(form.city, "Ville") }}
+    {{ form_errors(form.city) }}
+    {{ form_widget(form.city, { 'attr': {'style': 'margin-bottom:14px;width: 200px', 'placeholder': 'Ville'}}) }}
+
+    {{ form_label(form.country, "Pays") }}
+    {{ form_errors(form.country) }}
+    {{ form_widget(form.country) }}
+    </div>
+  </div>
+
+
+      {{ form_rest(form) }}
+<br/>
+{{ form_end(form) }}
+</div>
+{% endblock fos_user_content %}

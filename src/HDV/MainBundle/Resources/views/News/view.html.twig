@@ -1,0 +1,58 @@
+{% extends "::layout.html.twig" %}
+{% block body %}
+
+<section class="content">
+<div class="row">
+    <div class="col-md-8">
+    <div class="box box-content">
+      <div class="box-body content">
+        <div class="box-header with-border">
+          <h3 class="box-title">{{ news.title }}</h3><span style="float:right;color:#a52a2a"><strong>du {{ news.date|localizeddate('full', 'short', 'fr')|capitalize }}</strong>
+        </div>
+  <br/>
+<div class="row">
+    <div class="col-md-7" style="overflow-wrap: break-word;">
+
+{{ news.content|raw }}
+  </div>
+  <div class="col-md-5">
+    {% if news.image is not null %}
+      <img style="border: 1px solid black;" src="{{ asset(news.image.webPath) | imagine_filter('news') }}" alt="{{ news.image.alt }}">
+      {% else %}
+      <img style="border: 1px solid black;" src="{{ asset("bundles/images/couv/sans.jpg") | imagine_filter('news') }}" alt="sans">
+    {% endif %}  </div>
+</div>
+</div>
+</div>
+</div>
+
+<div class="col-md-4">
+  <div class="box box-primary">
+    <div class="box-body text-center">
+      <div class="box-header with-border">
+        <h3 class="box-title">Nos ventes à venir</h3>
+      </div>
+  {{ render(controller("HDVVentesBundle:Default:include")) }}
+  </div>
+    </div>
+  </div>
+  </div>
+</section>
+
+
+{% endblock %}
+{% block footer %}
+<script type="text/javascript">
+  $(document).ready(function() {
+	$("[data-fancybox]").fancybox({
+    image : {
+  protect: true
+},
+        iframe : {
+          preload : true,
+            scrolling : 'no'
+        }
+      });
+    });
+</script>
+{% endblock %}

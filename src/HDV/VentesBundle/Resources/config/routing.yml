@@ -1,0 +1,60 @@
+hdv_ventes_homepage:
+    path:     /
+    defaults: { _controller: HDVVentesBundle:Default:index }
+
+hdv_ventes_old:
+    path:     /old
+    defaults: { _controller: HDVVentesBundle:Default:oldventes }
+
+hdv_ventes_view:
+    path:      /{id}
+    defaults:
+        _controller: HDVVentesBundle:Default:view
+    requirements:
+        id: \d+
+
+hdv_ventes_object_view:
+    path:      /lot/{id}
+    defaults:
+        _controller: HDVVentesBundle:Default:viewobject
+    requirements:
+        id: \d+
+
+hdv_ventes_object_ordre:
+    path:      /ordre/{object}/{cata}
+    defaults:
+        _controller: HDVVentesBundle:Ordres:index
+
+hdv_ventes_object_ordre_cat:
+    path:      /ordrecat/{objectcat}
+    defaults:
+        _controller: HDVVentesBundle:Ordres:cat
+    requirements:
+        id: \d+
+
+hdv_ventes_plus:
+    path:      /plus/{id}
+    defaults:
+        _controller: HDVVentesBundle:Default:plus
+    requirements:
+        id: \d+
+
+hdv_ventes_catalogue:
+    path:      /catalogue/{id}
+    defaults:
+        _controller: HDVVentesBundle:Default:cat
+    requirements:
+        id: \d+
+hdv_ventes_grid:
+    path:      /grid/{id}
+    defaults:
+        _controller: HDVVentesBundle:Default:grid
+    requirements:
+        id: \d+
+
+hdv_ventes_enquiry_form:
+    path:      /enquiry/{id}
+    defaults:
+        _controller: HDVVentesBundle:Enquiry:index
+    requirements:
+        id: \d+

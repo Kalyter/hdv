@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+
+<html>
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no" name="viewport">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.5.0/css/font-awesome.min.css">
+   {% stylesheets filter='cssrewrite' 'bundles/css/site/*' %}
+    <link rel="stylesheet" href="{{ asset_url }}" type="text/css" />
+  {% endstylesheets %}
+  {% stylesheets filter='cssrewrite' 'bundles/css/fontlive.css' %}
+   <link rel="stylesheet" href="{{ asset_url }}" type="text/css" />
+  {% endstylesheets %}
+{% javascripts 'bundles/adminjs/jquery-2.2.3.min.js' %}
+ <script type="text/javascript" src="{{ asset_url }}"></script>
+{% endjavascripts %}
+</head>
+<body class="hold-transition skin-blue sidebar-mini" style="background-color:white;">
+  <div class="box-body">
+    <div class="box-header with-border">
+            <h3 class="box-title">Demande de renseignements</h3>
+          </div>
+  {% if app.session.flashBag.has('success') %}
+        <div class="alert alert-success">
+            {% for msg in app.session.flashBag.get('success') %}
+                {{ msg }}
+            {% endfor %}
+        </div>
+    {% else %}
+
+          <div style="padding:10px;"><b>Lot n°{{ object.ordre }}{% if object.ordrebis is defined %} {{ object.ordrebis }}{% endif %}</b> - {{ substrdatatables(object.description) }}<br/><br/>
+  {{ form_start(form) }}
+  {% if app.user is not null %}
+  <fieldset class="cadre">
+ <legend><h3>Vos informations personnelles :</h3></legend>
+ <div class="row">
+   <div class="col-sm-6">
+     <div class="form-group">
+       <label class="control-label required" for="null">Votre email :</label>
+       <input type="text" id="null" name="null" required="required" class="password-field form-control" value="{{ app.user.email }}" disabled></div>
+       <div class="form-group">
+         <label class="control-label required" for="null">Confirmez votre email :</label>
+         <input type="text" id="null" name="null" required="required" class="password-field form-control" value="{{ app.user.email }}" disabled></div>
+     </div>
+   <div class="col-sm-6">
+
+       <div class="form-group">
+         <label class="control-label required" for="null">Nom :</label>
+         <input type="text" id="null" name="null" required="required" class="password-field form-control" value="{{ app.user.firstname}}" disabled></div>
+
+         <div class="form-group">
+           <label class="control-label required" for="null">Téléphone :</label>
+           <input type="text" id="null" name="null" required="required" class="password-field form-control" value="{{ app.user.phone }}" disabled></div>
+   </div>
+ </div>
+
+  {% else %}
+  <div class="alert alert-warning">
+  <strong><span class="glyphicon glyphicon-info-sign"></span>  Important.</strong> Identifiez-vous ou inscrivez-vous afin de faciliter le suivi de votre demande.
+  </div>
+  <fieldset class="cadre">
+ <legend><h3>Vos informations personnelles :</h3></legend>
+ <div class="row">
+   <div class="col-sm-6">
+       {{ form_errors(form.mail) }}
+           {{ form_widget(form.mail, { 'attr': {'style': 'margin-bottom:14px;width: 220px'}}) }}
+
+     </div>
+   <div class="col-sm-6">
+
+     {{ form_label(form.nom, "Nom :") }}
+     {{ form_errors(form.nom) }}
+     {{ form_widget(form.nom, { 'attr': {'style': 'margin-bottom:14px;width: 210px'}}) }}
+
+     {{ form_label(form.tel, "Téléphone :") }}
+     {{ form_errors(form.tel) }}
+     {{ form_widget(form.tel, { 'attr': {'style': 'margin-bottom:14px;width: 120px'}}) }}
+   </div>
+ </div>
+  {% endif %}
+
+  <div style="width:95%; margin-left:auto; margin-right:auto;">
+{{ form_label(form.message, "Votre demande :") }}
+{{ form_errors(form.message) }}
+{{ form_widget(form.message, { 'attr': {'style': 'margin-bottom:14px'}}) }}
+{{ form_rest(form) }}
+{{ form_end(form) }}
+</div> </fieldset>
+<small>Conformément à la loi "informatique et libertés" du 6 janvier 1978 modifiée, vous bénéficiez d’un droit d’accès et de rectification aux informations qui vous concernent. Si vous souhaitez exercer ce droit et obtenir communication des informations vous concernant, veuillez vous adresser à l'étude Goxe-Belaïsch</small>
+  <br/>
+  </div>
+
+    {% endif %}
+    </div>
+  </body>
+  </html>

@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+
+<html>
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no" name="viewport">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.5.0/css/font-awesome.min.css">
+   {% stylesheets filter='cssrewrite' 'bundles/css/site/*' %}
+    <link rel="stylesheet" href="{{ asset_url }}" type="text/css" />
+  {% endstylesheets %}
+  {% stylesheets filter='cssrewrite' 'bundles/css/fontlive.css' %}
+   <link rel="stylesheet" href="{{ asset_url }}" type="text/css" />
+  {% endstylesheets %}
+{% javascripts 'bundles/adminjs/jquery-2.2.3.min.js' %}
+ <script type="text/javascript" src="{{ asset_url }}"></script>
+{% endjavascripts %}
+</head>
+<body class="hold-transition skin-blue sidebar-mini" style="background-color:white;">
+  {% if app.session.flashBag.has('success') %}
+        <div class="alert alert-success">
+            {% for msg in app.session.flashBag.get('success') %}
+                {{ msg }}
+            {% endfor %}
+        </div>
+    {% endif %}
+<div>
+
+  <div class="box-body">
+      <div class="box-header with-border">
+              <h3 class="box-title">Ordres d'achat</h3>
+            </div><br/>
+          {% if app.user is not null %}
+
+          {% if app.user.validate == 0 %}
+          <div class="alert alert-warning">
+          <strong><span class="glyphicon glyphicon-info-sign"></span>  Important.</strong> Votre compte ne présente pas assez de renseignements pour vous permettre de laisser des ordres d'achat. Merci de vous rendre sur votre page de profil.
+        </div>
+        {% else %}
+        <div class="alert alert-info">
+        <strong><span class="glyphicon glyphicon-info-sign"></span>  Information.</strong> Choisissez simplement si vous souhaitez être appelé ou enregistrer votre enchère maximum.
+      </div>
+        <div style="padding:10px;"><b>Lot n°{{ object.ordre }}{% if object.ordrebis is defined %} {{ object.ordrebis }}{% endif %}</b> - {{ substrdatatables(object.description) }}<br/><br/>
+          {{ render(controller(
+              'HDVVentesBundle:Ordres:index',
+              { 'object': object.id, 'cata': 1}
+          )) }}</div>
+
+          <div class="alert alert-warning">
+          <strong><span class="fa fa-fw fa-phone"></span> Vos coordonnées téléphonique :</strong><br/>
+          Téléphone 1 : {% if app.user.phone is not null %} {{ app.user.phone }}  {% else %} Aucun{% endif %}<br/>
+          Téléphone 2 : {% if app.user.phone2 is not null %} {{ app.user.phone2 }}  {% else %} Aucun{% endif %}<br/>
+        </div>
+        {% endif %}
+{% else %}
+<div class="alert alert-info">
+<strong><span class="glyphicon glyphicon-info-sign"></span>  Inscrivez-vous.</strong> Une fois inscrit et votre compte validé, vous pourrez laisser un ordre.
+</div>
+{% endif %}
+</div>
+  </body>
+  </html>

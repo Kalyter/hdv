@@ -1,0 +1,12 @@
+{% extends "@FOSUser/layout.html.twig" %}
+
+{% trans_default_domain 'FOSUserBundle' %}
+
+{% block fos_user_content %}
+<div class="box-header with-border">
+  <h3 class="box-title">Validation de votre inscription</h3>
+</div>
+<div class="box-body content">
+  Un e-mail a été envoyé à l'adresse {{ user.email }}.<br/><br/> Il contient un lien d'activation sur lequel il vous faudra cliquer afin d'activer votre compte.
+</div>
+{% endblock fos_user_content %}

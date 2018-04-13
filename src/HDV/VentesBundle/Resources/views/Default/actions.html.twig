@@ -1,0 +1,4 @@
+<a href="{{ asset('bundles/images/ventes/'~dt_obj.codevac~'/'~ dt_item) }}" data-fancybox="images" data-caption="Lot n°{{ dt_obj.ordre }} - {{ dt_obj.description }}">
+<img src="{{ asset("hdv/web/bundles/images/ventes/"~dt_obj.codevac~"/"~ dt_item) | imagine_filter('lotmoyen') }}" style="max-width:120px;" align="center"/></a>
+<br/>
+{{ imgmultiple(dt_obj.imagesupp,dt_obj.codevac) }}

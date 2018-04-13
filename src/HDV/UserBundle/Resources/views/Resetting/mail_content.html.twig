@@ -1,0 +1,13 @@
+{% extends "::layout_mail.html.twig" %}
+
+
+{% block body %}
+<div> Bonjour {{ user.gender }} {{ user.firstname }},<br/><br/>
+
+Vous avez solicité une réinitialisation de votre mot de passe, merci de cliquer sur ce lien pour choisir un nouveau mot de passe :<br/><br/>
+<a href="{{ confirmationUrl }}"> {{ confirmationUrl }}</a><br/><br/>
+Pour tout renseignement, n'hésitez pas à nous contacter, nous vous réponderons avec plaisir.<br/><br/>
+Bien cordialement,<br/>
+l'équipe du site Goxe & Belaïsch.
+</div>
+{% endblock %}

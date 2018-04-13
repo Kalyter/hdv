@@ -1,0 +1,23 @@
+hdv_main_homepage:
+    path:     /
+    defaults: { _controller: HDVMainBundle:Default:index }
+
+hdv_main_pages:
+    path:     /content/{slug}
+    defaults: { _controller: HDVMainBundle:Default:pages }
+
+hdv_main_news_view:
+    path:     /news/id/{news}
+    defaults: { _controller: HDVMainBundle:Default:newsview }
+
+hdv_main_news_all:
+    path:     /news/list/{page}
+    defaults:
+        _controller: HDVMainBundle:Default:listnews
+        page: 1
+    requirements:
+        page: \d*
+
+hdv_main_estimate:
+    path:     /estimate
+    defaults: { _controller: HDVMainBundle:Default:indexest }

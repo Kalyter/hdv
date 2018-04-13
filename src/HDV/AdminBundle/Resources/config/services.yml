@@ -1,0 +1,4 @@
+services:
+#    hdv_admin.example:
+#        class: HDV\AdminBundle\Example
+#        arguments: ["@service_id", "plain_value", "%parameter%"]

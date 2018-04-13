@@ -1,0 +1,13 @@
+{% extends "::layout_mail.html.twig" %}
+
+
+{% block body %}
+<div> Bonjour {{ user.gender }} {{ user.firstname }},<br/><br/>
+
+Afin de profiter de tous les services fournis par notre site web, cliquez sur le lien ci-dessous pour confirmer votre adresse électronique :<br/><br/>
+<a href="{{ confirmationUrl }}"> {{ confirmationUrl }}</a><br/><br/>
+Pour tout renseignement, n'hésitez pas à nous contacter, nous vous réponderons avec plaisir.<br/><br/>
+Bien cordialement,<br/>
+l'équipe du site Goxe & Belaïsch.
+</div>
+{% endblock %}

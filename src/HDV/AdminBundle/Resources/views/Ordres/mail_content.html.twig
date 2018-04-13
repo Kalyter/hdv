@@ -1,0 +1,19 @@
+{% extends "::layout_mail.html.twig" %}
+
+
+{% block body %}
+<h3>Votre ordre d'achat a été validé.</h3>
+{{ ordres.user.gender }} {{ ordres.user.firstname }} {{ ordres.user.lastname }}, suite à votre demande ci-dessous, nous vous confirmons la prise en compte de celui-ci.<br/><br/>
+<div>
+    Votre ordre  : {{ ordres.type }}<br/>
+      {% if ordres.type == "Tel" %}
+  {{ ordres.user.phone }}
+      {% if ordres.user.phone2 is not null %}
+  <br/>{{ ordres.user.phone2 }}
+     {% endif %}
+     {% endif %}
+    {% if ordres.montant is not null %}{{ ordres.montant }} €{% endif %}<br/>
+    pour le lot n°{{ ordres.object.ordre }}{% if ordres.object.ordrebis is defined %} {{ ordres.object.ordrebis }}{% endif %} - {{ ordres.object.description }}
+</div>
+<br/>Bien cordialement,<br/>Hotel des ventes d'Enghien.
+{% endblock %}

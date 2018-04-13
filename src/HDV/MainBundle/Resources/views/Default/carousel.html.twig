@@ -1,0 +1,18 @@
+{% set var = 0%}
+
+
+<div class="carousel-inner" role="listbox">
+    {% for result in listRes %}
+
+    <div class="item {% if var == 0 %}active{% endif %}">
+      <img class="first-slide" src="{{ asset("hdv/web/bundles/images/ventes/"~result.codevac~"/"~ result.image) | imagine_filter('carouselfinal') }}">
+      <div class="container">
+        <div class="carousel-caption">
+    {{ result.description|slice(0,100) }}<br/><h3><font color=#D3AF55><b>ADJUG&Eacute; {{ result.adjuge }} &euro; </b></h3></font>
+        </div>
+      </div>
+    </div>
+{% set var = var + 1 %}
+      {% endfor %}
+
+</div>

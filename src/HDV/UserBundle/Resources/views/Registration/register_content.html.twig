@@ -1,0 +1,107 @@
+{% trans_default_domain 'FOSUserBundle' %}
+
+<section class="content">
+<div class="row">
+  <div class="col-md-4">
+
+<div class="box box-primary">
+  <div class="box-body">
+    <div class="box-header with-border" style="padding-top:20px;">
+            <h3 class="box-title">Pourquoi s'inscrire ?</h3>
+          </div>
+          <h3 class="profile-username text-center">Vos enchères</h3>
+          <div class="alert alert-warning">
+          <strong><span class="glyphicon glyphicon-info-sign"></span>  Suite à la validation de votre compte</strong>, vous pourrez participer à nos ventes notamment en laissant des ordres d'achat.<br/>
+          Si vous êtes vendeur ou/et acheteur, vous aurez également accès à la situation de vos comptes.
+        </div>
+        <h3 class="profile-username text-center">Vos biens</h3>
+        <div class="alert alert-info">
+        <strong><span class="glyphicon glyphicon-info-sign"></span>  Besoin d'une estimation ?</strong><br/> Les demandes et le suivi de vos estimations seront disponible depuis votre compte.
+      </div>
+    </div>
+  </div>
+</div>
+  <div class="col-md-8">
+    <div class="box box-content">
+      <div class="box-body content">
+        <div class="box-header with-border">
+          <h3 class="box-title">Inscription</h3>
+        </div>
+  <div class="box-body content">
+{{ form_start(form, {'method': 'post', 'action': path('fos_user_registration_register'), 'attr': {'class': 'fos_user_registration_register'}}) }}
+
+
+<h3>Vos informations de connexion :</h3><br/>
+  <div class="row">
+    <div class="col-sm-6">
+        {{ form_label(form.email) }}
+        {{ form_errors(form.email) }}
+        <div class="input-group">
+            <span class="input-group-addon"><i class="fa fa-fw  fa-at"></i></span>
+            {{ form_widget(form.email, { 'attr': { 'placeholder': 'Adresse e-mail'}}) }}
+        </div>
+      </div>
+    <div class="col-sm-6">
+    {{ form_errors(form.plainPassword) }}
+      {{ form_widget(form.plainPassword, { 'attr': { 'placeholder': 'Password'}}) }}
+    </div>
+  </div>
+
+<h3>Vos informations personnelles :</h3><br/>
+  <div class="row">
+    <div class="col-sm-6">
+    {{ form_label(form.gender, "Civilité") }}
+    {{ form_errors(form.gender) }}
+    {{ form_widget(form.gender, { 'attr': {'style': 'margin-bottom:14px;width: 150px'}}) }}
+
+    {{ form_label(form.firstname, "Nom") }}
+    {{ form_errors(form.firstname) }}
+    {{ form_widget(form.firstname, { 'attr': {'style': 'margin-bottom:14px;', 'placeholder': 'Nom'}}) }}
+
+    {{ form_label(form.lastname, "Prénom") }}
+    {{ form_errors(form.lastname) }}
+    {{ form_widget(form.lastname, { 'attr': {'style': 'margin-bottom:14px;', 'placeholder': 'Prénom'}}) }}
+
+    {{ form_label(form.phone, "Téléphone") }}
+    {{ form_errors(form.phone) }}
+    {{ form_widget(form.phone, { 'attr': {'style': 'margin-bottom:14px;width: 150px', 'placeholder': 'Téléphone'}}) }}
+
+    {{ form_label(form.phone2, "Téléphone 2") }}
+    {{ form_errors(form.phone2) }}
+    {{ form_widget(form.phone2, { 'attr': {'style': 'margin-bottom:14px;width: 150px', 'placeholder': 'Téléphone 2'}}) }}
+    </div>
+    <div class="col-sm-6">
+    {{ form_label(form.address, "Adresse") }}
+    {{ form_errors(form.address) }}
+    {{ form_widget(form.address, { 'attr': {'style': 'margin-bottom:14px;', 'placeholder': 'Adresse'}}) }}
+
+    {{ form_label(form.address2, "Adresse Suite") }}
+    {{ form_errors(form.address2) }}
+    {{ form_widget(form.address2, { 'attr': {'style': 'margin-bottom:14px;', 'placeholder': 'Suite'}}) }}
+
+    {{ form_label(form.zipCode, "Code Postal") }}
+    {{ form_errors(form.zipCode) }}
+    {{ form_widget(form.zipCode, { 'attr': {'style': 'margin-bottom:14px;width: 120px', 'placeholder': 'Code Postal'}}) }}
+
+    {{ form_label(form.city, "Ville") }}
+    {{ form_errors(form.city) }}
+    {{ form_widget(form.city, { 'attr': {'style': 'margin-bottom:14px;width: 200px', 'placeholder': 'Ville'}}) }}
+
+    {{ form_label(form.country, "Pays") }}
+    {{ form_errors(form.country) }}
+    {{ form_widget(form.country) }}
+    </div>
+  </div>
+{{ form_widget(form._token) }}
+<br/>
+    <div class="container-fluid">
+        <input type="submit"  class="btn btn-primary" value="{{ 'registration.submit'|trans }}" />
+    </div>
+      {{ form_rest(form) }}
+{{ form_end(form) }}
+</div>
+</div>
+</div>
+</div>
+</div>
+</section>

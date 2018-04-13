@@ -1,0 +1,11 @@
+{% trans_default_domain 'FOSUserBundle' %}
+{% block subject %}
+{%- autoescape false -%}
+Réinitialisation de votre mot de passe
+{%- endautoescape -%}
+{% endblock %}
+
+
+{% block body_html %}
+{% include 'HDVUserBundle:Resetting:mail_content.html.twig' %}
+{% endblock %}

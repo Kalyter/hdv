@@ -1,0 +1,11 @@
+{% extends "@FOSUser/layout.html.twig" %}
+
+{% block fos_user_content %}
+
+<div class="box-header with-border">
+  <h3 class="box-title">Réinitialiser votre mot de passe :</h3>
+</div>
+<div class="box-body content">
+{% include "HDVUserBundle:Resetting:reset_content.html.twig" %}
+</div>
+{% endblock fos_user_content %}
