@@ -1,5 +1,8 @@
-Symfony Standard Edition
+HDV ENGHIEN sous Symfony 3
 ========================
+
+Projet de plateforme de suivi acheteurs/vendeurs aux enchères en ligne via connexion ODBC Mysql
+sur progiciel 4D (Ivoire).
 
 Welcome to the Symfony Standard Edition - a fully-functional Symfony
 application that you can use as the skeleton for your new applications.
